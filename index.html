@@ -93,49 +93,81 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.8) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%);
             z-index: 0;
         }
         
-        .video-content {
+        /* Nuevo diseño para el texto - esquina superior izquierda */
+        .hero-content {
             position: relative;
             z-index: 1;
-            padding-top: 20vh; /* Mover el contenido más hacia arriba */
+            padding: 3rem;
+            max-width: 600px;
         }
         
-        /* Mejoras para el texto sobre video */
-        .hero-text {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .hero-text-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-top: 2rem;
         }
         
         .hero-title {
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            color: #2563eb;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
         }
         
         .hero-subtitle {
-            background: rgba(0,0,0,0.4);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 30px;
-            margin-bottom: 30px;
+            color: #1e293b;
+            font-weight: 500;
+        }
+        
+        .cta-buttons {
+            position: absolute;
+            bottom: 3rem;
+            right: 3rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 20;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
         }
         
         /* Ajustes para móviles */
         @media (max-width: 768px) {
-            .video-content {
-                padding-top: 15vh;
+            .hero-content {
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+            
+            .hero-text-box {
+                margin-top: 1rem;
+                padding: 1.5rem;
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
             
-            .cta-button {
-                padding: 12px 24px;
-                font-size: 1rem;
+            .cta-buttons {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1.5rem;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .scroll-down {
+                bottom: 3rem;
             }
         }
     </style>
@@ -165,7 +197,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section con Video de Fondo - Texto optimizado -->
+    <!-- Hero Section con Video de Fondo - Texto en esquina superior izquierda -->
     <div class="video-container">
         <video autoplay muted loop playsinline class="video-background">
             <source src="assets/videos/secretaria.mp4" type="video/mp4">
@@ -173,29 +205,33 @@
         </video>
         <div class="video-overlay"></div>
         
-        <div class="video-content flex flex-col items-center justify-start pt-16">
-            <div class="hero-text text-center text-white">
-                <h1 class="hero-title text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
+        <div class="hero-content">
+            <div class="hero-text-box animate__animated animate__fadeInLeft">
+                <h1 class="hero-title text-3xl md:text-4xl font-bold mb-3">
                     Odento: Turnos Automáticos
                 </h1>
-                <p class="hero-subtitle text-xl md:text-2xl animate__animated animate__fadeIn">
+                <p class="hero-subtitle text-lg mb-6">
                     Confirmación por WhatsApp en segundos. Reduce los no-shows y optimiza tu agenda.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                    <a href="#contact" class="cta-button bg-white text-primary px-8 py-3 rounded-full font-bold text-lg">
-                        Solicitar Demo Gratis <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#how-it-works" class="cta-button bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold text-lg">
-                        Ver Funcionalidades
-                    </a>
-                </div>
-            </div>
-            
-            <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-20">
-                <a href="#features" class="text-white text-3xl">
-                    <i class="fas fa-chevron-down"></i>
+                <a href="#contact" class="cta-button bg-primary text-white px-6 py-3 rounded-full font-bold inline-block">
+                    Solicitar Demo Gratis <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="#how-it-works" class="cta-button bg-white text-primary px-5 py-2 rounded-full font-bold text-sm md:text-base">
+                <i class="fas fa-play-circle mr-2"></i> Ver Video
+            </a>
+            <a href="#contact" class="cta-button bg-primary text-white px-5 py-2 rounded-full font-bold text-sm md:text-base">
+                <i class="fab fa-whatsapp mr-2"></i> Contactar
+            </a>
+        </div>
+        
+        <div class="scroll-down animate-bounce">
+            <a href="#features" class="text-white text-3xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
     </div>
 

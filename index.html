@@ -28,6 +28,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         .feature-card {
@@ -97,8 +98,8 @@
             z-index: 0;
         }
         
-        /* Nuevo diseño para el texto - margen derecho */
-        .hero-content {
+        /* Diseño para escritorio - margen derecho */
+        .desktop-hero {
             position: absolute;
             top: 50%;
             right: 5%;
@@ -143,39 +144,104 @@
             z-index: 20;
         }
         
-        /* Ajustes para móviles */
-        @media (max-width: 768px) {
-            .hero-content {
-                position: relative;
-                top: auto;
-                right: auto;
-                transform: none;
-                max-width: 100%;
-                padding: 1.5rem;
-                text-align: center;
+        /* Diseño para móviles - parte superior sin tapar el video */
+        .mobile-hero {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .mobile-hero-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        
+        .mobile-hero-title {
+            color: #2563eb;
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+        
+        .mobile-hero-subtitle {
+            color: #1e293b;
+            font-weight: 500;
+        }
+        
+        /* Menú móvil */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.95);
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Ajustes responsive */
+        @media (max-width: 1024px) {
+            .desktop-hero {
+                display: none;
             }
             
-            .hero-text-box {
-                margin-top: 1rem;
-                padding: 1.5rem;
+            .mobile-hero {
+                display: block;
             }
             
-            .hero-title {
-                font-size: 1.8rem;
+            .desktop-nav {
+                display: none;
             }
             
-            .scroll-down {
-                bottom: 3rem;
+            .hamburger {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .mobile-hero {
+                display: none;
+            }
+            
+            .desktop-hero {
+                display: block;
+            }
+            
+            .desktop-nav {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: none;
             }
         }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navbar con botón de demo -->
+    <!-- Navbar responsive -->
     <nav class="bg-primary text-white py-4 px-6 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <!-- Logo como texto temporal -->
                 <div class="flex items-center">
                     <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center mr-3">
                         <i class="fas fa-tooth text-primary text-xl"></i>
@@ -183,19 +249,43 @@
                     <span class="text-2xl font-bold">ODENTO</span>
                 </div>
             </div>
-            <div class="hidden md:flex space-x-8">
+            
+            <!-- Menú escritorio -->
+            <div class="desktop-nav flex space-x-8">
                 <a href="#features" class="hover:text-secondary transition">Funciones</a>
                 <a href="#how-it-works" class="hover:text-secondary transition">Cómo Funciona</a>
                 <a href="#testimonials" class="hover:text-secondary transition">Testimonios</a>
                 <a href="#contact" class="hover:text-secondary transition">Contacto</a>
             </div>
-            <a href="#contact" class="bg-white text-primary font-bold px-6 py-2 rounded-full hover:bg-gray-100 transition">
+            
+            <!-- Botón hamburguesa móvil -->
+            <div class="hamburger text-2xl">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <a href="#contact" class="bg-white text-primary font-bold px-6 py-2 rounded-full hover:bg-gray-100 transition hidden md:block">
                 Solicitar Demo
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section con Video de Fondo - Texto en margen derecho -->
+    <!-- Menú móvil -->
+    <div class="mobile-menu">
+        <div class="absolute top-4 right-4 text-white text-3xl">
+            <i class="fas fa-times close-menu"></i>
+        </div>
+        <div class="flex flex-col items-center space-y-6 text-2xl">
+            <a href="#features" class="text-white hover:text-blue-200 transition">Funciones</a>
+            <a href="#how-it-works" class="text-white hover:text-blue-200 transition">Cómo Funciona</a>
+            <a href="#testimonials" class="text-white hover:text-blue-200 transition">Testimonios</a>
+            <a href="#contact" class="text-white hover:text-blue-200 transition">Contacto</a>
+            <a href="#contact" class="bg-white text-primary font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition mt-8">
+                Solicitar Demo
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section con Video de Fondo -->
     <div class="video-container">
         <video autoplay muted loop playsinline class="video-background">
             <source src="assets/videos/secretaria.mp4" type="video/mp4">
@@ -203,8 +293,8 @@
         </video>
         <div class="video-overlay"></div>
         
-        <!-- Texto en el margen derecho -->
-        <div class="hero-content animate__animated animate__fadeInRight">
+        <!-- Texto para escritorio - margen derecho -->
+        <div class="desktop-hero animate__animated animate__fadeInRight">
             <div class="hero-text-box">
                 <h1 class="hero-title text-3xl md:text-4xl font-bold">
                     Odento: Turnos Automáticos
@@ -214,7 +304,19 @@
                     Reduce los no-shows y optimiza tu agenda.
                 </p>
                 <div class="divider"></div>
-                <!-- Botón eliminado como solicitado -->
+            </div>
+        </div>
+        
+        <!-- Texto para móviles - parte superior -->
+        <div class="mobile-hero animate__animated animate__fadeInDown">
+            <div class="mobile-hero-box">
+                <h1 class="mobile-hero-title font-bold">
+                    Odento: Turnos Automáticos
+                </h1>
+                <p class="mobile-hero-subtitle">
+                    Confirmación por WhatsApp en segundos.<br>
+                    Reduce los no-shows y optimiza tu agenda.
+                </p>
             </div>
         </div>
         
@@ -549,6 +651,19 @@
                     console.log('La reproducción automática falló:', error);
                 });
             }
+            
+            // Menú móvil
+            const hamburger = document.querySelector('.hamburger');
+            const closeMenu = document.querySelector('.close-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
         });
     </script>
 </body>

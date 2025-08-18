@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+k<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -36,3 +36,92 @@
         <p class="text-xl mb-8">Asistente de WhatsApp con IA para gestión automática de turnos</p>
         <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-50 transition">Solicitar Demo</button>
     </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Funcionalidades Principales</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-blue-600 text-4xl mb-4">🤖</div>
+                    <h3 class="font-bold text-xl mb-2">Gestión Automática</h3>
+                    <p>Reserva, confirma y reprograma turnos 24/7 sin intervención humana.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-blue-600 text-4xl mb-4">📅</div>
+                    <h3 class="font-bold text-xl mb-2">Recordatorios Inteligentes</h3>
+                    <p>Envío automático de alertas 48h y 4h antes de la cita.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-blue-600 text-4xl mb-4">💬</div>
+                    <h3 class="font-bold text-xl mb-2">WhatsApp Multiplataforma</h3>
+                    <p>Atiende audios y mensajes desde cualquier dispositivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="demo" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Cómo Funciona</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-12">
+                    <div class="md:w-1/2">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl mb-4">1</div>
+                        <h3 class="font-bold text-xl mb-2">El paciente escribe por WhatsApp</h3>
+                        <p class="text-gray-600">Puede enviar mensaje de texto o audio. Odento convierte voz a texto automáticamente.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-400">
+                            [Simulador de chat]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-center mb-12">
+                    <div class="md:w-1/2">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl mb-4">2</div>
+                        <h3 class="font-bold text-xl mb-2">Confirmación automática</h3>
+                        <p class="text-gray-600">El sistema ofrece 3 horarios disponibles y confirma el turno con un link de pago seguro.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div id="calendar" class="h-96"></div>
+                        <script>
+                          document.addEventListener("DOMContentLoaded", () => {
+                            const calendarEl = document.getElementById("calendar");
+                            const calendar = new FullCalendar.Calendar(calendarEl, {
+                              initialView: "dayGridMonth",
+                              locale: "es",
+                              headerToolbar: {
+                                left: "prev,next today",
+                                center: "title",
+                                right: "dayGridMonth,timeGridWeek"
+                              },
+                              events: [
+                                {
+                                  title: "Turno Dr. Pérez",
+                                  start: new Date().toISOString().split("T")[0] + "T10:00:00",
+                                  color: "#3B82F6"
+                                },
+                                {
+                                  title: "Turno Dra. García",
+                                  start: new Date().toISOString().split("T")[0] + "T14:30:00",
+                                  color: "#10B981"
+                                }
+                              ]
+                            });
+                            calendar.render();
+                          });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

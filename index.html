@@ -97,12 +97,17 @@
             z-index: 0;
         }
         
-        /* Nuevo diseño para el texto - esquina superior izquierda */
+        /* Nuevo diseño para el texto - margen derecho */
         .hero-content {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
             z-index: 1;
-            padding: 3rem;
-            max-width: 600px;
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem;
+            text-align: right;
         }
         
         .hero-text-box {
@@ -110,7 +115,6 @@
             border-radius: 16px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            margin-top: 2rem;
         }
         
         .hero-title {
@@ -122,15 +126,13 @@
         .hero-subtitle {
             color: #1e293b;
             font-weight: 500;
+            margin-bottom: 1.5rem;
         }
         
-        .cta-buttons {
-            position: absolute;
-            bottom: 3rem;
-            right: 3rem;
-            display: flex;
-            gap: 1rem;
-            z-index: 20;
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2563eb, transparent);
+            margin: 1.5rem 0;
         }
         
         .scroll-down {
@@ -144,8 +146,13 @@
         /* Ajustes para móviles */
         @media (max-width: 768px) {
             .hero-content {
-                padding: 1.5rem;
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
                 max-width: 100%;
+                padding: 1.5rem;
+                text-align: center;
             }
             
             .hero-text-box {
@@ -157,15 +164,6 @@
                 font-size: 1.8rem;
             }
             
-            .cta-buttons {
-                position: relative;
-                bottom: auto;
-                right: auto;
-                margin-top: 1.5rem;
-                flex-direction: column;
-                width: 100%;
-            }
-            
             .scroll-down {
                 bottom: 3rem;
             }
@@ -173,7 +171,7 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navbar -->
+    <!-- Navbar con botón de demo -->
     <nav class="bg-primary text-white py-4 px-6 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
@@ -197,7 +195,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section con Video de Fondo - Texto en esquina superior izquierda -->
+    <!-- Hero Section con Video de Fondo - Texto en margen derecho -->
     <div class="video-container">
         <video autoplay muted loop playsinline class="video-background">
             <source src="assets/videos/secretaria.mp4" type="video/mp4">
@@ -205,27 +203,19 @@
         </video>
         <div class="video-overlay"></div>
         
-        <div class="hero-content">
-            <div class="hero-text-box animate__animated animate__fadeInLeft">
-                <h1 class="hero-title text-3xl md:text-4xl font-bold mb-3">
+        <!-- Texto en el margen derecho -->
+        <div class="hero-content animate__animated animate__fadeInRight">
+            <div class="hero-text-box">
+                <h1 class="hero-title text-3xl md:text-4xl font-bold">
                     Odento: Turnos Automáticos
                 </h1>
-                <p class="hero-subtitle text-lg mb-6">
-                    Confirmación por WhatsApp en segundos. Reduce los no-shows y optimiza tu agenda.
+                <p class="hero-subtitle text-lg">
+                    Confirmación por WhatsApp en segundos.<br>
+                    Reduce los no-shows y optimiza tu agenda.
                 </p>
-                <a href="#contact" class="cta-button bg-primary text-white px-6 py-3 rounded-full font-bold inline-block">
-                    Solicitar Demo Gratis <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="divider"></div>
+                <!-- Botón eliminado como solicitado -->
             </div>
-        </div>
-        
-        <div class="cta-buttons">
-            <a href="#how-it-works" class="cta-button bg-white text-primary px-5 py-2 rounded-full font-bold text-sm md:text-base">
-                <i class="fas fa-play-circle mr-2"></i> Ver Video
-            </a>
-            <a href="#contact" class="cta-button bg-primary text-white px-5 py-2 rounded-full font-bold text-sm md:text-base">
-                <i class="fab fa-whatsapp mr-2"></i> Contactar
-            </a>
         </div>
         
         <div class="scroll-down animate-bounce">

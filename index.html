@@ -31,42 +31,6 @@
             overflow-x: hidden;
         }
         
-        .feature-card {
-            transition: all 0.3s ease;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
-            color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin: 0 auto 20px;
-        }
-        
-        .cta-button {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
         /* Estilos optimizados para el video de fondo */
         .video-container {
             position: relative;
@@ -94,60 +58,60 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 100%);
             z-index: 0;
         }
         
-        /* Diseño para escritorio - margen derecho */
+        /* Diseño para escritorio - margen superior derecho */
         .desktop-hero {
             position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translateY(-50%);
+            top: 15%; /* Posición superior */
+            right: 5%; /* Margen derecho */
             z-index: 1;
             max-width: 500px;
             width: 100%;
-            padding: 2rem;
             text-align: right;
         }
         
         .hero-text-box {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 16px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         
         .hero-title {
             color: #2563eb;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
         
         .hero-subtitle {
             color: #1e293b;
             font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        
-        .divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #2563eb, transparent);
-            margin: 1.5rem 0;
-        }
-        
-        .scroll-down {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
         
         /* Diseño para móviles - parte superior sin tapar el video */
         .mobile-hero {
             position: absolute;
-            top: 20%;
+            top: 15%; /* Posición superior */
             left: 0;
             right: 0;
             z-index: 1;
@@ -156,23 +120,39 @@
         }
         
         .mobile-hero-box {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 16px;
             padding: 1.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             max-width: 90%;
             margin: 0 auto;
+            animation: slideInDown 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .mobile-hero-title {
             color: #2563eb;
             font-size: 1.8rem;
+            font-weight: 700;
             line-height: 1.2;
+            margin-bottom: 0.8rem;
         }
         
         .mobile-hero-subtitle {
             color: #1e293b;
             font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.5;
         }
         
         /* Menú móvil */
@@ -183,7 +163,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(37, 99, 235, 0.95);
+            background: rgba(37, 99, 235, 0.98);
             z-index: 100;
             flex-direction: column;
             justify-content: center;
@@ -197,6 +177,7 @@
         .hamburger {
             display: none;
             cursor: pointer;
+            z-index: 101;
         }
         
         /* Ajustes responsive */
@@ -207,6 +188,7 @@
             
             .mobile-hero {
                 display: block;
+                top: 20%; /* Mayor espacio superior en móvil */
             }
             
             .desktop-nav {
@@ -215,6 +197,11 @@
             
             .hamburger {
                 display: block;
+            }
+            
+            .mobile-hero-box {
+                max-width: 85%; /* Más compacto para móvil */
+                padding: 1.2rem;
             }
         }
         
@@ -225,6 +212,7 @@
             
             .desktop-hero {
                 display: block;
+                top: 15%; /* Posición superior solicitada */
             }
             
             .desktop-nav {
@@ -235,11 +223,22 @@
                 display: none;
             }
         }
+
+        /* Navbar estilos */
+        .navbar {
+            background: #2563eb;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contenido principal con espacio para el video */
+        .content-section {
+            padding: 5rem 0;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navbar responsive -->
-    <nav class="bg-primary text-white py-4 px-6 shadow-lg sticky top-0 z-50">
+    <nav class="navbar text-white py-4 px-6 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <div class="flex items-center">
@@ -252,14 +251,14 @@
             
             <!-- Menú escritorio -->
             <div class="desktop-nav flex space-x-8">
-                <a href="#features" class="hover:text-secondary transition">Funciones</a>
-                <a href="#how-it-works" class="hover:text-secondary transition">Cómo Funciona</a>
-                <a href="#testimonials" class="hover:text-secondary transition">Testimonios</a>
-                <a href="#contact" class="hover:text-secondary transition">Contacto</a>
+                <a href="#features" class="hover:text-blue-200 transition font-medium">Funciones</a>
+                <a href="#how-it-works" class="hover:text-blue-200 transition font-medium">Cómo Funciona</a>
+                <a href="#testimonials" class="hover:text-blue-200 transition font-medium">Testimonios</a>
+                <a href="#contact" class="hover:text-blue-200 transition font-medium">Contacto</a>
             </div>
             
             <!-- Botón hamburguesa móvil -->
-            <div class="hamburger text-2xl">
+            <div class="hamburger text-2xl text-white">
                 <i class="fas fa-bars"></i>
             </div>
             
@@ -293,24 +292,23 @@
         </video>
         <div class="video-overlay"></div>
         
-        <!-- Texto para escritorio - margen derecho -->
-        <div class="desktop-hero animate__animated animate__fadeInRight">
+        <!-- Texto para escritorio - margen superior derecho -->
+        <div class="desktop-hero">
             <div class="hero-text-box">
-                <h1 class="hero-title text-3xl md:text-4xl font-bold">
+                <h1 class="hero-title">
                     Odento: Turnos Automáticos
                 </h1>
-                <p class="hero-subtitle text-lg">
+                <p class="hero-subtitle">
                     Confirmación por WhatsApp en segundos.<br>
                     Reduce los no-shows y optimiza tu agenda.
                 </p>
-                <div class="divider"></div>
             </div>
         </div>
         
-        <!-- Texto para móviles - parte superior -->
-        <div class="mobile-hero animate__animated animate__fadeInDown">
+        <!-- Texto para móviles - parte superior centrada -->
+        <div class="mobile-hero">
             <div class="mobile-hero-box">
-                <h1 class="mobile-hero-title font-bold">
+                <h1 class="mobile-hero-title">
                     Odento: Turnos Automáticos
                 </h1>
                 <p class="mobile-hero-subtitle">
@@ -319,16 +317,10 @@
                 </p>
             </div>
         </div>
-        
-        <div class="scroll-down animate-bounce">
-            <a href="#features" class="text-white text-3xl">
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
     </div>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-gray-50">
+    <section id="features" class="content-section bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Potencia tu Clínica Dental</h2>
@@ -336,7 +328,7 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="feature-card bg-white p-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
                     <div class="text-primary text-5xl mb-6 flex justify-center">
                         <i class="fas fa-robot"></i>
                     </div>
@@ -344,7 +336,7 @@
                     <p class="text-gray-600 text-center">Reserva, confirma y reprograma turnos 24/7 sin intervención humana. Integración con tu agenda existente.</p>
                 </div>
                 
-                <div class="feature-card bg-white p-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
                     <div class="text-primary text-5xl mb-6 flex justify-center">
                         <i class="fas fa-bell"></i>
                     </div>
@@ -352,7 +344,7 @@
                     <p class="text-gray-600 text-center">Envía alertas automáticas 48h y 4h antes de la cita. Reduce no-shows hasta en un 80%.</p>
                 </div>
                 
-                <div class="feature-card bg-white p-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
                     <div class="text-primary text-5xl mb-6 flex justify-center">
                         <i class="fab fa-whatsapp"></i>
                     </div>
@@ -364,7 +356,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-white">
+    <section id="how-it-works" class="content-section bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Así de simple funciona</h2>
@@ -373,44 +365,44 @@
             
             <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                 <div class="text-center p-6">
-                    <div class="step-number">1</div>
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
                     <h3 class="font-bold text-xl mb-3">Consulta</h3>
                     <p class="text-gray-600 mb-4">El paciente escribe por WhatsApp (texto o audio)</p>
                     <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
                         <div class="text-gray-500">
                             <i class="fab fa-whatsapp text-4xl text-green-500 mb-3"></i>
-                            <p>"Hola, quisiera pedir un turno para limpieza dental"</p>
+                            <p class="text-sm">"Hola, quisiera pedir un turno"</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center p-6">
-                    <div class="step-number">2</div>
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
                     <h3 class="font-bold text-xl mb-3">Confirmación</h3>
                     <p class="text-gray-600 mb-4">Odento ofrece 3 horarios disponibles</p>
                     <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
                         <div class="text-gray-500">
                             <i class="far fa-calendar-alt text-4xl text-blue-500 mb-3"></i>
-                            <p>"Tenemos disponibles: Martes 10:30, Miércoles 15:00 o Jueves 11:15"</p>
+                            <p class="text-sm">"Martes 10:30, Miércoles 15:00"</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center p-6">
-                    <div class="step-number">3</div>
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
                     <h3 class="font-bold text-xl mb-3">Pago y Confirmación</h3>
                     <p class="text-gray-600 mb-4">Link seguro para seña y confirmación</p>
                     <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
                         <div class="text-gray-500">
                             <i class="fas fa-lock text-4xl text-green-500 mb-3"></i>
-                            <p>"Reserva tu turno con una seña de $500"</p>
+                            <p class="text-sm">"Reserva con una seña de $500"</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="mt-16 text-center">
-                <a href="#contact" class="cta-button bg-primary text-white px-8 py-4 rounded-full font-bold text-lg inline-block">
+                <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg inline-block hover:bg-blue-700 transition">
                     Comenzar Ahora <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -418,7 +410,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-20 bg-gradient-to-r from-primary to-secondary">
+    <section id="testimonials" class="content-section bg-gradient-to-r from-primary to-secondary">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
@@ -484,7 +476,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="content-section bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div class="md:flex">
@@ -532,7 +524,7 @@
                                 <label class="block text-gray-700 mb-2">Clínica</label>
                                 <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                             </div>
-                            <button type="submit" class="w-full cta-button bg-primary text-white py-4 rounded-lg font-bold">
+                            <button type="submit" class="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-blue-700 transition">
                                 Solicitar Demo Gratis
                             </button>
                         </form>
@@ -543,7 +535,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
@@ -634,7 +626,7 @@
         <i class="fab fa-whatsapp text-white text-3xl"></i>
     </a>
     
-    <!-- Script para asegurar la reproducción del video en móviles -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.querySelector('.video-background');
@@ -659,10 +651,21 @@
             
             hamburger.addEventListener('click', () => {
                 mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Bloquear scroll
             });
             
             closeMenu.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                document.body.style.overflow = ''; // Restaurar scroll
+            });
+            
+            // Cerrar menú al hacer clic en enlaces
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
         });
     </script>

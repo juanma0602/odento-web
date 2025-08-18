@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odento - Asistente WhatsApp para Clínicas Dentales</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/es.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
@@ -124,7 +127,34 @@
                 </div>
                 <div class="md:w-1/2">
                     <div class="bg-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-400">
-                        [Calendario interactivo]
+                        <div id="calendar" class="h-96"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const calendarEl = document.getElementById("calendar");
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: "dayGridMonth",
+      locale: "es",
+      headerToolbar: {
+        left: "prev,next today",
+        center: "title",
+        right: "dayGridMonth,timeGridWeek"
+      },
+      events: [
+        {
+          title: "Turno Dr. Pérez",
+          start: new Date().toISOString().split("T")[0] + "T10:00:00",
+          color: "#3B82F6"
+        },
+        {
+          title: "Turno Dra. García",
+          start: new Date().toISOString().split("T")[0] + "T14:30:00",
+          color: "#10B981"
+        }
+      ]
+    });
+    calendar.render();
+  });
+</script>
                     </div>
                 </div>
             </div>

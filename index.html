@@ -31,19 +31,20 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-bg text-white text-center py-32 animate__animated animate__fadeIn">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Odento confirma tus turnos por WhatsApp, en segundos</h1>
-        <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl p-6">
-            <ul class="text-left text-lg space-y-3 list-disc list-inside animate__animated animate__fadeIn animate__delay-1s">
-                <li>Reduce el ausentismo con reconfirmación 1/2 y recordatorios 48h/4h</li>
-                <li>Confirmación automática 24/7</li>
-                <li>Integración con tu calendario existente</li>
-            </ul>
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+        <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover opacity-90 z-0" style="transform: scale(1.15); object-position: 50% 30%;">
+            <source src="assets/videos/secretaria.webm" type="video/webm">
+            <source src="assets/videos/secretaria.mp4" type="video/mp4">
+        </video>
+        <!-- Fallback Mobile -->
+        <div class="md:hidden absolute inset-0 bg-[url(/assets/images/secretaria-poster.jpg)] bg-cover bg-center"></div>
+        <div class="relative z-10 text-center text-white px-4 py-32 bg-gradient-to-r from-black/70 to-black/40 w-full">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Odento: Turnos Automáticos</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Confirmación por WhatsApp en segundos</p>
+            <button class="mt-8 bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition animate__animated animate__fadeInUp">
+                Solicitar Demo →
+            </button>
         </div>
-        <button class="mt-8 bg-white animate__animated animate__fadeInUp animate__delay-2s text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition text-lg">
-            <a href="https://wa.me/5491234567890?text=Hola%20Odento,%20quiero%20una%20demo%20del%20sistema" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition inline-block">Solicitar Demo por WhatsApp →</a>
-        </button>
     </header>
 
  <section class="py-16 bg-gray-50">

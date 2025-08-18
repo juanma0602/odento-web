@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Odento</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odento - Asistente WhatsApp para Clínicas Dentales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3');
+            background-size: cover;
+        }
+    </style>
 </head>
-<body>
-    <h1>Bienvenido a Odento</h1>
+<body class="font-sans">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="font-bold text-xl">Odento</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-blue-200">Funciones</a>
+                <a href="#demo" class="hover:text-blue-200">Demo</a>
+                <a href="#contact" class="hover:text-blue-200">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white text-center py-32 animate__animated animate__fadeIn">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Revoluciona tu Clínica Dental</h1>
+        <p class="text-xl mb-8">Asistente de WhatsApp con IA para gestión automática de turnos</p>
+        <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-50 transition">Solicitar Demo</button>
+    </header>
+
+    <script>
+        // Aquí añadiremos interactividad luego
+        console.log("Sitio Odento cargado!");
+    </script>
 </body>
 </html>

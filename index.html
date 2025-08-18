@@ -22,7 +22,7 @@
     <!-- Navbar -->
     <nav class="bg-blue-600 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <img src="assets/images/logo-odento.png" alt="Logo Odento" class="h-10">
+            <img src="assets/images/logo-odento.png" loading="lazy" alt="Logo Odento" class="h-10">
             <div class="hidden md:flex space-x-6">
                 <a href="#features" class="hover:text-blue-200">Funciones</a>
                 <a href="#demo" class="hover:text-blue-200">Demo</a>
@@ -33,15 +33,15 @@
 
     <!-- Hero Section -->
     <header class="hero-bg text-white text-center py-32 animate__animated animate__fadeIn">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Odento confirma tus turnos por WhatsApp, en segundos</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Odento confirma tus turnos por WhatsApp, en segundos</h1>
         <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl p-6">
-            <ul class="text-left text-lg space-y-3 list-disc list-inside">
+            <ul class="text-left text-lg space-y-3 list-disc list-inside animate__animated animate__fadeIn animate__delay-1s">
                 <li>Reduce el ausentismo con reconfirmación 1/2 y recordatorios 48h/4h</li>
                 <li>Confirmación automática 24/7</li>
                 <li>Integración con tu calendario existente</li>
             </ul>
         </div>
-        <button class="mt-8 bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition text-lg">
+        <button class="mt-8 bg-white animate__animated animate__fadeInUp animate__delay-2s text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition text-lg">
             <a href="https://wa.me/5491234567890?text=Hola%20Odento,%20quiero%20una%20demo%20del%20sistema" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition inline-block">Solicitar Demo por WhatsApp →</a>
         </button>
     </header>
@@ -58,19 +58,19 @@
             <h2 class="text-3xl font-bold text-center mb-12">Funcionalidades Principales</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-2 animate__animated animate__fadeIn">
                     <div class="text-blue-600 text-4xl mb-4">🤖</div>
                     <h3 class="font-bold text-xl mb-2">Gestión Automática</h3>
                     <p>Reserva, confirma y reprograma turnos 24/7 sin intervención humana.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-2 animate__animated animate__fadeIn">
                     <div class="text-blue-600 text-4xl mb-4">📅</div>
                     <h3 class="font-bold text-xl mb-2">Recordatorios Inteligentes</h3>
                     <p>Envío automático de alertas 48h y 4h antes de la cita.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-2 animate__animated animate__fadeIn">
                     <div class="text-blue-600 text-4xl mb-4">💬</div>
                     <h3 class="font-bold text-xl mb-2">WhatsApp Multiplataforma</h3>
                     <p>Atiende audios y mensajes desde cualquier dispositivo.</p>
@@ -85,7 +85,7 @@
             <h2 class="text-3xl font-bold text-center mb-16">Funciona en 3 pasos</h2>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Paso 1 -->
-                <div class="text-center p-6">
+                <div class="text-center p-6 hover:scale-105 transition duration-300">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
                     <h3 class="font-bold text-xl mb-2">Consulta</h3>
                     <p class="text-gray-600">El paciente escribe por WhatsApp (texto o audio)</p>
@@ -95,7 +95,7 @@
                 </div>
                 
                 <!-- Paso 2 -->
-                <div class="text-center p-6">
+                <div class="text-center p-6 hover:scale-105 transition duration-300">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
                     <h3 class="font-bold text-xl mb-2">Confirmación</h3>
                     <p class="text-gray-600">Odento ofrece 3 horarios disponibles</p>
@@ -105,7 +105,7 @@
                 </div>
                 
                 <!-- Paso 3 -->
-                <div class="text-center p-6">
+                <div class="text-center p-6 hover:scale-105 transition duration-300">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
                     <h3 class="font-bold text-xl mb-2">Pago</h3>
                     <p class="text-gray-600">Link seguro para seña configurable</p>
@@ -148,7 +148,7 @@
             <h2 class="text-3xl font-bold mb-6">¿Listo para probarlo?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Demo en minutos, piloto funcional en 7 días.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition">
+                <button class="bg-white text-blue-600 hover:shadow-xl hover:scale-105 transition duration-300 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition">
                     <a href="https://wa.me/5491234567890?text=Hola%20Odento,%20quiero%20una%20demo%20del%20sistema" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition inline-block">Solicitar Demo por WhatsApp →</a>
                 </button>
                 <button class="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">

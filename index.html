@@ -5,153 +5,439 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odento - Asistente WhatsApp para Clínicas Dentales</title>
     <meta name="description" content="Odento: Asistente de WhatsApp para clínicas dentales. Agenda turnos automáticamente, reduce no-shows con recordatorios y reconfirmación. Integración simple y sin diagnósticos.">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/es.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#0ea5e9',
+                        accent: '#06b6d4',
+                        dark: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+        
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="font-sans">
-    <!-- Navbar Corregida -->
-    <nav class="bg-blue-600 text-white p-4 shadow-md sticky top-0 z-50">
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-primary text-white py-4 px-6 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <img src="assets/images/logo-odento-light.png" class="h-8 brightness-0 invert" alt="Logo Odento">
-            <div class="flex space-x-6">
-                <a href="#features" class="hover:text-blue-200 font-medium">Funciones</a>
-                <a href="#demo" class="hover:text-blue-200 font-medium">Demo</a>
-                <a href="#contact" class="hover:text-blue-200 font-medium">Contacto</a>
+            <div class="flex items-center">
+                <!-- Logo como texto temporal -->
+                <div class="flex items-center">
+                    <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-tooth text-primary text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold">ODENTO</span>
+                </div>
             </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-secondary transition">Funciones</a>
+                <a href="#how-it-works" class="hover:text-secondary transition">Cómo Funciona</a>
+                <a href="#testimonials" class="hover:text-secondary transition">Testimonios</a>
+                <a href="#contact" class="hover:text-secondary transition">Contacto</a>
+            </div>
+            <a href="#contact" class="bg-white text-primary font-bold px-6 py-2 rounded-full hover:bg-gray-100 transition">
+                Solicitar Demo
+            </a>
         </div>
     </nav>
 
-    <!-- Header Mejorado -->
-    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-        <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover opacity-80 z-0">
-            <source src="assets/videos/nuevo-video.webm" type="video/webm">
-            <source src="assets/videos/nuevo-video.mp4" type="video/mp4">
-        </video>
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-dark">
+        <div class="absolute inset-0 bg-gray-200">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 z-10"></div>
+            <!-- Placeholder for video background -->
+            <div class="w-full h-full flex items-center justify-center">
+                <div class="text-center">
+                    <i class="fas fa-video text-gray-300 text-5xl mb-4"></i>
+                    <p class="text-gray-400">Vídeo de fondo aquí</p>
+                </div>
+            </div>
+        </div>
         
-        <div class="relative z-10 text-center text-white px-4 py-12 bg-black/30 backdrop-blur-sm rounded-xl max-w-2xl mx-auto">
+        <div class="relative z-20 text-center text-white px-4 max-w-4xl">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown">
                 Odento: Turnos Automáticos
             </h1>
-            <p class="text-xl md:text-2xl mb-10 font-light max-w-xl mx-auto">
-                Confirmación por WhatsApp en segundos
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
+                Confirmación por WhatsApp en segundos. Reduce los no-shows y optimiza tu agenda.
             </p>
-            <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition transform hover:scale-105 duration-300 animate__animated animate__fadeInUp">
-                Solicitar Demo →
-            </button>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="cta-button bg-white text-primary px-8 py-4 rounded-full font-bold text-lg">
+                    Solicitar Demo Gratis <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#how-it-works" class="cta-button bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg">
+                    Ver Funcionalidades
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+            <a href="#features" class="text-white text-3xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
     </header>
 
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xl italic max-w-2xl mx-auto">"Odento redujo nuestro no-show en 2 semanas. Los pacientes aman la confirmación por WhatsApp"</p>
-            <p class="font-bold mt-4">— Dr. Pérez, Clínica Dental Smile</p>
-        </div>
-    </section>
-
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-gray-50">
+    <section id="features" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Funcionalidades Principales</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Potencia tu Clínica Dental</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Odento automatiza la gestión de turnos por WhatsApp, reduciendo el trabajo administrativo y mejorando la experiencia del paciente.</p>
+            </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-2 animate__animated animate__fadeIn">
-                    <div class="text-blue-600 text-4xl mb-4">🤖</div>
-                    <h3 class="font-bold text-xl mb-2">Gestión Automática</h3>
-                    <p>Reserva, confirma y reprograma turnos 24/7 sin intervención humana.</p>
+                <div class="feature-card bg-white p-8">
+                    <div class="text-primary text-5xl mb-6 flex justify-center">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-center">Gestión Automática</h3>
+                    <p class="text-gray-600 text-center">Reserva, confirma y reprograma turnos 24/7 sin intervención humana. Integración con tu agenda existente.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-2 animate__animated animate__fadeIn">
-                    <div class="text-blue-600 text-4xl mb-4">📅</div>
-                    <h3 class="font-bold text-xl mb-2">Recordatorios Inteligentes</h3>
-                    <p>Envío automático de alertas 48h y 4h antes de la cita.</p>
+                <div class="feature-card bg-white p-8">
+                    <div class="text-primary text-5xl mb-6 flex justify-center">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-center">Recordatorios Inteligentes</h3>
+                    <p class="text-gray-600 text-center">Envía alertas automáticas 48h y 4h antes de la cita. Reduce no-shows hasta en un 80%.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-2 animate__animated animate__fadeIn">
-                    <div class="text-blue-600 text-4xl mb-4">💬</div>
-                    <h3 class="font-bold text-xl mb-2">WhatsApp Multiplataforma</h3>
-                    <p>Atiende audios y mensajes desde cualquier dispositivo.</p>
+                <div class="feature-card bg-white p-8">
+                    <div class="text-primary text-5xl mb-6 flex justify-center">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-center">WhatsApp Multiplataforma</h3>
+                    <p class="text-gray-600 text-center">Atiende mensajes de texto y audios desde cualquier dispositivo. Sin apps adicionales.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section id="demo" class="py-16 bg-white">
+    <section id="how-it-works" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-16">Funciona en 3 pasos</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Paso 1 -->
-                <div class="text-center p-6 hover:scale-105 transition duration-300">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="font-bold text-xl mb-2">Consulta</h3>
-                    <p class="text-gray-600">El paciente escribe por WhatsApp (texto o audio)</p>
-                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-center justify-center">
-                        <span class="text-gray-400">📱 Ilustración WhatsApp</span>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Así de simple funciona</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Integración en minutos, resultados desde el primer día.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <div class="text-center p-6">
+                    <div class="step-number">1</div>
+                    <h3 class="font-bold text-xl mb-3">Consulta</h3>
+                    <p class="text-gray-600 mb-4">El paciente escribe por WhatsApp (texto o audio)</p>
+                    <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
+                        <div class="text-gray-500">
+                            <i class="fab fa-whatsapp text-4xl text-green-500 mb-3"></i>
+                            <p>"Hola, quisiera pedir un turno para limpieza dental"</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Paso 2 -->
-                <div class="text-center p-6 hover:scale-105 transition duration-300">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="font-bold text-xl mb-2">Confirmación</h3>
-                    <p class="text-gray-600">Odento ofrece 3 horarios disponibles</p>
-                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-center justify-center">
-                        <span class="text-gray-400">⏱️ Ilustración Horarios</span>
+                <div class="text-center p-6">
+                    <div class="step-number">2</div>
+                    <h3 class="font-bold text-xl mb-3">Confirmación</h3>
+                    <p class="text-gray-600 mb-4">Odento ofrece 3 horarios disponibles</p>
+                    <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
+                        <div class="text-gray-500">
+                            <i class="far fa-calendar-alt text-4xl text-blue-500 mb-3"></i>
+                            <p>"Tenemos disponibles: Martes 10:30, Miércoles 15:00 o Jueves 11:15"</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Paso 3 -->
-                <div class="text-center p-6 hover:scale-105 transition duration-300">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="font-bold text-xl mb-2">Pago</h3>
-                    <p class="text-gray-600">Link seguro para seña configurable</p>
-                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-center justify-center">
-                        <span class="text-gray-400">💳 Ilustración Pago</span>
+                <div class="text-center p-6">
+                    <div class="step-number">3</div>
+                    <h3 class="font-bold text-xl mb-3">Pago y Confirmación</h3>
+                    <p class="text-gray-600 mb-4">Link seguro para seña y confirmación</p>
+                    <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
+                        <div class="text-gray-500">
+                            <i class="fas fa-lock text-4xl text-green-500 mb-3"></i>
+                            <p>"Reserva tu turno con una seña de $500"</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección de Contacto Reposicionada -->
-    <section id="contact" class="bg-blue-600 text-white py-20">
-        <div class="container mx-auto text-center px-4">
-            <h2 class="text-3xl font-bold mb-6">¿Listo para probarlo?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Demo en minutos, piloto funcional en 7 días.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/5491234567890?text=Hola%20Odento,%20quiero%20una%20demo%20del%20sistema" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition inline-block">
-                    Solicitar Demo por WhatsApp →
+            
+            <div class="mt-16 text-center">
+                <a href="#contact" class="cta-button bg-primary text-white px-8 py-4 rounded-full font-bold text-lg inline-block">
+                    Comenzar Ahora <i class="fas fa-arrow-right ml-2"></i>
                 </a>
-                <button class="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">
-                    Ver Video Explicativo
-                </button>
             </div>
         </div>
     </section>
 
-    <!-- Footer (solo uno) -->
-    <footer class="bg-gray-900 text-white py-8 text-sm">
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gradient-to-r from-primary to-secondary">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <p class="mb-4">Odento no brinda diagnóstico ni atención de urgencias. Mensajes sensibles se derivan a un profesional.</p>
-                <p class="mb-4">Pagos vía Mercado Pago; no almacenamos datos de tarjeta (solo IDs de transacción).</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="/politica-privacidad" class="underline hover:text-blue-300">Política de Privacidad</a>
-                    <a href="/terminos" class="underline hover:text-blue-300">Términos</a>
-                    <a href="mailto:legal@odento.lat" class="underline hover:text-blue-300">Contacto Legal</a>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-blue-100 max-w-2xl mx-auto">Clínicas dentales que ya automatizaron su gestión de turnos</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-white italic mb-6">"Odento redujo nuestro no-show en un 70% en solo 2 semanas. Los pacientes aman la confirmación por WhatsApp y nosotros recuperamos horas de trabajo."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mr-4"></div>
+                        <div>
+                            <p class="font-bold text-white">Dr. Pérez</p>
+                            <p class="text-blue-100">Clínica Dental Smile</p>
+                        </div>
+                    </div>
                 </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-white italic mb-6">"La integración fue muy sencilla. En 3 días ya teníamos todo funcionando. Ahora nuestra secretaria puede enfocarse en tareas más importantes."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mr-4"></div>
+                        <div>
+                            <p class="font-bold text-white">Dra. Martínez</p>
+                            <p class="text-blue-100">Odontología Integral</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-white italic mb-6">"El sistema de pagos integrado ha sido un éxito. Los pacientes aprecian la facilidad y nosotros reducimos las cancelaciones de última hora."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mr-4"></div>
+                        <div>
+                            <p class="font-bold text-white">Dr. González</p>
+                            <p class="text-blue-100">Centro Dental Avanzado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gradient-to-br from-primary to-secondary p-10 text-white">
+                        <h2 class="text-3xl font-bold mb-4">¿Listo para transformar tu clínica?</h2>
+                        <p class="mb-6">Demo en minutos, piloto funcional en 7 días.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Sin costos iniciales</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Integración en 24 horas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Soporte técnico permanente</span>
+                            </li>
+                        </ul>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-volume text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-sm">Contáctanos</p>
+                                <p class="font-bold text-lg">+54 9 11 2345-6789</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Solicita una demostración</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Nombre</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Teléfono</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Clínica</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <button type="submit" class="w-full cta-button bg-primary text-white py-4 rounded-lg font-bold">
+                                Solicitar Demo Gratis
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-tooth text-primary text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold">ODENTO</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Automatización de turnos por WhatsApp para clínicas dentales.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#features" class="text-gray-400 hover:text-white transition">Funciones</a>
+                        </li>
+                        <li>
+                            <a href="#how-it-works" class="text-gray-400 hover:text-white transition">Cómo Funciona</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonios</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">Términos y Condiciones</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidad</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contacto</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Av. Corrientes 1234, Buenos Aires, Argentina</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>+54 9 11 2345-6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@odento.lat</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 Odento.lat - Todos los derechos reservados. Diseñado para clínicas dentales.</p>
+                <p class="mt-2">Odento no brinda diagnóstico ni atención de urgencias. Mensajes sensibles se derivan a un profesional.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5491123456789" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-50 animate-pulse">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
 </body>
 </html>

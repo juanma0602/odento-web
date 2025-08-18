@@ -19,48 +19,45 @@
     </style>
 </head>
 <body class="font-sans">
-    <!-- Navbar -->
-    <nav class="bg-blue-600 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-end pb-20">
-            <img src="assets/images/logo-odento-light.png" class="h-10 brightness-0 invert" loading="lazy" alt="Logo Odento" class="h-10">
-            <div class="hidden md:flex space-x-6">
-                <a href="#features" class="hover:text-blue-200">Funciones</a>
-                <a href="#demo" class="hover:text-blue-200">Demo</a>
-                <a href="#contact" class="hover:text-blue-200">Contacto</a>
+    <!-- Navbar Corregida -->
+    <nav class="bg-blue-600 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="assets/images/logo-odento-light.png" class="h-8 brightness-0 invert" alt="Logo Odento">
+            <div class="flex space-x-6">
+                <a href="#features" class="hover:text-blue-200 font-medium">Funciones</a>
+                <a href="#demo" class="hover:text-blue-200 font-medium">Demo</a>
+                <a href="#contact" class="hover:text-blue-200 font-medium">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative h-screen flex items-end pb-20 justify-center overflow-hidden bg-gray-900">
-        <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover opacity-90 z-0" style="transform: scale(1.15); object-position: 50% 30%;">
-            <source src="assets/videos/secretaria.webm" type="video/webm">
-            <source src="assets/videos/secretaria.mp4" type="video/mp4">
+    <!-- Header Mejorado -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+        <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover opacity-80 z-0">
+            <source src="assets/videos/nuevo-video.webm" type="video/webm">
+            <source src="assets/videos/nuevo-video.mp4" type="video/mp4">
         </video>
-        <!-- Fallback Mobile -->
-        <div class="md:hidden absolute inset-0 bg-black/70 flex items-end pb-20 justify-center">
-            <div class="text-center px-4">
-                <h1 class="text-3xl font-bold mb-4">Odento: Turnos Automáticos</h1>
-                <button class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-full font-bold">
-                    Solicitar Demo →
-                </button>
-            </div>
-        </div>
-        <div class="md:hidden absolute inset-0 bg-[url(/assets/images/secretaria-poster.jpg)] bg-cover bg-center"></div>
-        <div class="relative z-10 text-center text-white px-4 py-48 bg-gradient-to-b from-black/90 to-black/40 w-full">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Odento: Turnos Automáticos</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Confirmación por WhatsApp en segundos</p>
-            <button class="mt-8 bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition animate__animated animate__fadeInUp">
+        
+        <div class="relative z-10 text-center text-white px-4 py-12 bg-black/30 backdrop-blur-sm rounded-xl max-w-2xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown">
+                Odento: Turnos Automáticos
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 font-light max-w-xl mx-auto">
+                Confirmación por WhatsApp en segundos
+            </p>
+            <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition transform hover:scale-105 duration-300 animate__animated animate__fadeInUp">
                 Solicitar Demo →
             </button>
         </div>
     </header>
 
- <section class="py-16 bg-gray-50">
-     <div class="container mx-auto px-4 text-center">
-         <p class="text-xl italic max-w-2xl mx-auto">"Odento redujo nuestro no-show en 2 semanas. Los pacientes aman la confirmación por WhatsApp"</p>
-         <p class="font-bold mt-4">— Dr. Pérez, Clínica Dental Smile</p>
-     </div>
- </section>
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xl italic max-w-2xl mx-auto">"Odento redujo nuestro no-show en 2 semanas. Los pacientes aman la confirmación por WhatsApp"</p>
+            <p class="font-bold mt-4">— Dr. Pérez, Clínica Dental Smile</p>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -95,49 +92,54 @@
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Paso 1 -->
                 <div class="text-center p-6 hover:scale-105 transition duration-300">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-end pb-20 justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
                     <h3 class="font-bold text-xl mb-2">Consulta</h3>
                     <p class="text-gray-600">El paciente escribe por WhatsApp (texto o audio)</p>
-                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-end pb-20 justify-center">
+                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-center justify-center">
                         <span class="text-gray-400">📱 Ilustración WhatsApp</span>
                     </div>
                 </div>
                 
                 <!-- Paso 2 -->
                 <div class="text-center p-6 hover:scale-105 transition duration-300">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-end pb-20 justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
                     <h3 class="font-bold text-xl mb-2">Confirmación</h3>
                     <p class="text-gray-600">Odento ofrece 3 horarios disponibles</p>
-                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-end pb-20 justify-center">
+                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-center justify-center">
                         <span class="text-gray-400">⏱️ Ilustración Horarios</span>
                     </div>
                 </div>
                 
                 <!-- Paso 3 -->
                 <div class="text-center p-6 hover:scale-105 transition duration-300">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-end pb-20 justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
                     <h3 class="font-bold text-xl mb-2">Pago</h3>
                     <p class="text-gray-600">Link seguro para seña configurable</p>
-                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-end pb-20 justify-center">
+                    <div class="mt-4 bg-gray-100 rounded-lg h-32 flex items-center justify-center">
                         <span class="text-gray-400">💳 Ilustración Pago</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="bg-gray-900 text-white py-8 text-sm">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <p class="mb-4">Odento no brinda diagnóstico ni atención de urgencias. Mensajes sensibles se derivan a un profesional.</p>
-                <p class="mb-4">Pagos vía Mercado Pago; no almacenamos datos de tarjeta (solo IDs de transacción).</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="/politica-privacidad" class="underline hover:text-blue-300">Política de Privacidad</a>
-                    <a href="/terminos" class="underline hover:text-blue-300">Términos</a>
-                    <a href="mailto:legal@odento.lat" class="underline hover:text-blue-300">Contacto Legal</a>
-                </div>
+
+    <!-- Sección de Contacto Reposicionada -->
+    <section id="contact" class="bg-blue-600 text-white py-20">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold mb-6">¿Listo para probarlo?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Demo en minutos, piloto funcional en 7 días.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/5491234567890?text=Hola%20Odento,%20quiero%20una%20demo%20del%20sistema" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition inline-block">
+                    Solicitar Demo por WhatsApp →
+                </a>
+                <button class="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">
+                    Ver Video Explicativo
+                </button>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Footer (solo uno) -->
     <footer class="bg-gray-900 text-white py-8 text-sm">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
@@ -152,18 +154,4 @@
         </div>
     </footer>
 </body>
-    <section class="bg-blue-600 text-white py-20">
-        <div class="container mx-auto text-center px-4">
-            <h2 class="text-3xl font-bold mb-6">¿Listo para probarlo?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Demo en minutos, piloto funcional en 7 días.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-white text-blue-600 hover:shadow-xl hover:scale-105 transition duration-300 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition">
-                    <a href="https://wa.me/5491234567890?text=Hola%20Odento,%20quiero%20una%20demo%20del%20sistema" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition inline-block">Solicitar Demo por WhatsApp →</a>
-                </button>
-                <button class="border-2 border-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">
-                    Ver Video Explicativo
-                </button>
-            </div>
-        </div>
-    </section>
 </html>

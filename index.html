@@ -127,26 +127,6 @@
         .animate-fade-in {
             animation: fadeIn 1.5s ease-out forwards;
         }
-        
-        /* Corrección para el video en móviles */
-        @media (max-width: 768px) {
-            .video-background {
-                /* Ajuste para mostrar más entorno del consultorio */
-                min-width: 120%;
-                min-height: 120%;
-                transform: translateX(-50%) translateY(-50%) scale(0.85);
-            }
-            
-            /* Asegurar que el menú móvil se muestre correctamente */
-            .mobile-menu {
-                padding: 20px;
-            }
-            
-            .mobile-menu a {
-                padding: 12px;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -200,8 +180,7 @@
     <!-- Hero Section con SOLO Video de Fondo -->
     <div class="video-container">
         <video autoplay muted loop playsinline class="video-background">
-            <!-- Video reemplazado por placeholder para demostración -->
-            <source src="https://cdn.pixabay.com/vimeo/851786155/consultorio-174038.mp4?width=1280&hash=6a2a5f9b7d6d2d3b0e1d8b5d5c5a5a5a5a5a5a5a" type="video/mp4">
+            <source src="assets/videos/secretaria.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
         <div class="video-overlay"></div>

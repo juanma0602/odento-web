@@ -14,24 +14,23 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     body{ font-family:'Poppins',sans-serif; scroll-behavior:smooth; overflow-x:hidden }
 
-    /* ========= Hero video ========= */
+    /* ===== Hero video ===== */
     .video-container{ position:relative; width:100%; height:100vh; overflow:hidden; background:#0b1b34 }
     .video-background{
       position:absolute; top:50%; left:50%;
-      width:100%; height:100%;           /* ocupa contenedor */
-      object-fit:cover;                   /* ESCRITORIO: llena y recorta */
+      width:100%; height:100%;
+      object-fit:cover;                /* escritorio: llena */
       object-position:50% 50%;
       transform:translate(-50%,-50%);
-      z-index:0;                          /* ✅ sobre el fondo del contenedor */
+      z-index:0;
     }
     .video-overlay{
       position:absolute; inset:0;
-      background:linear-gradient(to bottom,rgba(0,0,0,.8) 0%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.8) 100%);
-      z-index:1;                          /* ✅ por encima del video */
-      pointer-events:none;
+      background:linear-gradient(to bottom,rgba(0,0,0,.78) 0%,rgba(0,0,0,.22) 50%,rgba(0,0,0,.78) 100%);
+      z-index:1; pointer-events:none;
     }
 
-    /* ========= Navbar / Menú ========= */
+    /* ===== Navbar / Menú ===== */
     .navbar{ background:#2563eb; box-shadow:0 4px 12px rgba(0,0,0,.1) }
     .mobile-menu{ display:none; position:fixed; top:0; right:0; width:280px; height:100%;
       background:rgba(37,99,235,.98); z-index:100; flex-direction:column; padding:80px 20px 20px;
@@ -47,23 +46,23 @@
     .hamburger.active span:nth-child(2){ opacity:0 }
     .hamburger.active span:nth-child(3){ transform:translateY(-6px) rotate(-45deg) }
 
-    /* ========= Responsive ========= */
+    /* ===== Responsive ===== */
     @media (max-width:1024px){
       .desktop-nav{ display:none !important }
       .hamburger{ display:flex }
 
-      /* 📱 SOLO MÓVIL: “alejar” para ver más del consultorio/calendario */
+      /* 📱 MÓVIL: agrandar y encuadrar el calendario sin recortes feos */
       .video-background{
-        object-fit:contain;                      /* muestra más cuadro, sin recortar */
-        transform:translate(-50%,-50%) scale(.88);  /* leve zoom-out */
-        object-position:40% 50%;                 /* corrimiento para priorizar el calendario */
-        background:#0b1b34;                      /* color detrás de las barras (si aparecen) */
+        object-fit:cover;                     /* evita que se vea “chico” (sin letterboxing) */ /* MDN: object-fit cover */
+        transform:translate(-50%,-50%);       /* sin scale que reduzca */
+        object-position:38% 50%;              /* desplaza foco un poco a la izquierda (calendario) */ /* MDN: object-position */
       }
     }
     @media (max-width:480px) and (orientation:portrait){
       .video-background{
-        transform:translate(-50%,-50%) scale(.80);  /* más zoom-out en phones angostos */
-        object-position:38% 50%;
+        object-fit:cover;
+        transform:translate(-50%,-50%);       /* NO reducir */
+        object-position:35% 50%;              /* un toque más de calendario en phones angostos */
       }
     }
 
@@ -328,14 +327,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const video = document.querySelector('.video-background');
-      /* Autoplay robusto */
-      try {
-        video.muted = true;
-        const p = video.play();
-        if (p && typeof p.then === 'function') p.catch(()=>{ /* silencioso */ });
-      } catch(e) {}
+      try { video.muted = true; const p = video.play(); if (p && p.then) p.catch(()=>{}); } catch(e) {}
 
-      /* Menú móvil */
       const hamburger=document.getElementById('hamburger');
       const mobileMenu=document.getElementById('mobileMenu');
       function toggleMenu(forceOpen=null){

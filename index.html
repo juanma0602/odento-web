@@ -95,13 +95,6 @@
             .hamburger {
                 display: block;
             }
-            
-            /* Ajuste del video en móviles */
-            .video-background {
-                min-width: 150%;
-                min-height: 150%;
-                transform: translateX(-50%) translateY(-50%) scale(0.7);
-            }
         }
         
         @media (min-width: 1025px) {
@@ -187,7 +180,7 @@
     <!-- Hero Section con SOLO Video de Fondo -->
     <div class="video-container">
         <video autoplay muted loop playsinline class="video-background">
-            <source src="https://cdn.pixabay.com/vimeo/851786155/consultorio-174038.mp4?width=1280&hash=6a2a5f9b7d6d2d3b0e1d8b5d5c5a5a5a5a5a5a5a" type="video/mp4">
+            <source src="assets/videos/secretaria.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
         <div class="video-overlay"></div>
@@ -500,7 +493,7 @@
         <i class="fab fa-whatsapp text-white text-3xl"></i>
     </a>
     
-    <!-- Scripts Corregidos -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.querySelector('.video-background');
@@ -518,27 +511,25 @@
                 });
             }
             
-            // Menú móvil - Corrección completa
+            // Menú móvil
             const hamburger = document.querySelector('.hamburger');
             const closeMenu = document.querySelector('.close-menu');
             const mobileMenu = document.querySelector('.mobile-menu');
             
-            // Abrir menú
-            hamburger.addEventListener('click', function() {
+            hamburger.addEventListener('click', () => {
                 mobileMenu.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Bloquear scroll
             });
             
-            // Cerrar menú con botón X
-            closeMenu.addEventListener('click', function() {
+            closeMenu.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                document.body.style.overflow = ''; // Restaurar scroll
             });
             
             // Cerrar menú al hacer clic en enlaces
-            const menuLinks = document.querySelectorAll('.mobile-menu a');
-            menuLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
                     mobileMenu.classList.remove('active');
                     document.body.style.overflow = '';
                 });

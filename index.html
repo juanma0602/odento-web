@@ -255,41 +255,95 @@
     </div>
   </section>
 
-  <!-- ===== Testimonios ===== -->
-  <section id="testimonials" class="content-section bg-gradient-to-r from-primary to-secondary">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
-        <p class="text-blue-100 max-w-2xl mx-auto">Clínicas dentales que ya automatizaron su gestión de turnos</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-          <div class="text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="text-white italic mb-6">"Odento redujo nuestro no-show en un 70% en solo 2 semanas. Los pacientes aman la confirmación por WhatsApp y nosotros recuperamos horas de trabajo."</p>
-          <div class="flex items-center">
-            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mr-4"></div>
-            <div><p class="font-bold text-white">Dr. Pérez</p><p class="text-blue-100">Clínica Dental Smile</p></div>
-          </div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-          <div class="text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="text-white italic mb-6">"La integración fue muy sencilla. En 3 días ya teníamos todo funcionando. Ahora nuestra secretaria puede enfocarse en tareas más importantes."</p>
-          <div class="flex items-center">
-            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mr-4"></div>
-            <div><p class="font-bold text-white">Dra. Martínez</p><p class="text-blue-100">Odontología Integral</p></div>
-          </div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-          <div class="text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-          <p class="text-white italic mb-6">"El sistema de pagos integrado ha sido un éxito. Los pacientes aprecian la facilidad y nosotros reducimos las cancelaciones de última hora."</p>
-          <div class="flex items-center">
-            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mr-4"></div>
-            <div><p class="font-bold text-white">Dr. González</p><p class="text-blue-100">Centro Dental Avanzado</p></div>
-          </div>
-        </div>
-      </div>
+<!-- ===== Testimonios ===== -->
+<section id="testimonials" class="content-section bg-gradient-to-r from-primary to-secondary">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
+      <p class="text-blue-100 max-w-2xl mx-auto">Clínicas dentales que ya automatizaron su gestión de turnos</p>
     </div>
-  </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <article class="bg-white/10 backdrop-blur-sm p-6 rounded-xl" itemscope itemtype="https://schema.org/Review">
+        <div class="text-yellow-400 mb-4" aria-label="5 estrellas">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-white italic mb-6" itemprop="reviewBody">
+          "Odento redujo nuestro no-show en un 70% en solo 2 semanas. Los pacientes aman la confirmación por WhatsApp y nosotros recuperamos horas de trabajo."
+        </p>
+        <div class="flex items-center">
+          <img
+            src="assets/img/testimonials/perez.webp"
+            alt="Foto del Dr. Pérez"
+            class="w-16 h-16 rounded-full object-cover border-2 border-white/40 shadow mr-4"
+            width="64" height="64" loading="lazy" decoding="async"
+            onerror="this.src='assets/img/testimonials/fallback.webp'">
+          <div>
+            <p class="font-bold text-white" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span itemprop="name">Dr. Pérez</span>
+            </p>
+            <p class="text-blue-100" itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization">
+              <span itemprop="name">Clínica Dental Smile</span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white/10 backdrop-blur-sm p-6 rounded-xl" itemscope itemtype="https://schema.org/Review">
+        <div class="text-yellow-400 mb-4" aria-label="5 estrellas">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-white italic mb-6" itemprop="reviewBody">
+          "La integración fue muy sencilla. En 3 días ya teníamos todo funcionando. Ahora nuestra secretaria puede enfocarse en tareas más importantes."
+        </p>
+        <div class="flex items-center">
+          <img
+            src="assets/img/testimonials/martinez.webp"
+            alt="Foto de la Dra. Martínez"
+            class="w-16 h-16 rounded-full object-cover border-2 border-white/40 shadow mr-4"
+            width="64" height="64" loading="lazy" decoding="async"
+            onerror="this.src='assets/img/testimonials/fallback.webp'">
+          <div>
+            <p class="font-bold text-white" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span itemprop="name">Dra. Martínez</span>
+            </p>
+            <p class="text-blue-100" itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization">
+              <span itemprop="name">Odontología Integral</span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white/10 backdrop-blur-sm p-6 rounded-xl" itemscope itemtype="https://schema.org/Review">
+        <div class="text-yellow-400 mb-4" aria-label="4.5 estrellas">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p class="text-white italic mb-6" itemprop="reviewBody">
+          "El sistema de pagos integrado ha sido un éxito. Los pacientes aprecian la facilidad y nosotros reducimos las cancelaciones de última hora."
+        </p>
+        <div class="flex items-center">
+          <img
+            src="assets/img/testimonials/gonzalez.webp"
+            alt="Foto del Dr. González"
+            class="w-16 h-16 rounded-full object-cover border-2 border-white/40 shadow mr-4"
+            width="64" height="64" loading="lazy" decoding="async"
+            onerror="this.src='assets/img/testimonials/fallback.webp'">
+          <div>
+            <p class="font-bold text-white" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span itemprop="name">Dr. González</span>
+            </p>
+            <p class="text-blue-100" itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization">
+              <span itemprop="name">Centro Dental Avanzado</span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
   <!-- ===== Contacto / CTA ===== -->
   <section id="contact" class="content-section bg-gray-50">

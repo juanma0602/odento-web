@@ -90,10 +90,24 @@
     .content-section{ padding:5rem 0 }
     @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
     .animate-fade-in{ animation:fadeIn 1.5s ease-out forwards }
+
+    /* ===== Estilos para FAQ ===== */
+    .faq-item details > summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .faq-item details > summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-item summary .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item details[open] summary .faq-icon {
+      transform: rotate(45deg);
+    }
   </style>
 </head>
 <body class="bg-gray-50">
-  <!-- ===== Navbar ===== -->
   <nav class="navbar text-white py-4 px-6 sticky top-0 z-50" role="navigation" aria-label="Principal">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
@@ -103,15 +117,13 @@
         <span class="text-2xl font-bold">ODENTO</span>
       </div>
 
-      <!-- Menú escritorio -->
       <div class="desktop-nav flex space-x-8">
         <a href="#features" class="hover:text-blue-200 transition font-medium">Funciones</a>
         <a href="#how-it-works" class="hover:text-blue-200 transition font-medium">Cómo Funciona</a>
         <a href="#testimonials" class="hover:text-blue-200 transition font-medium">Testimonios</a>
-        <a href="#contact" class="hover:text-blue-200 transition font-medium">Contacto</a>
+        <a href="#faq" class="hover:text-blue-200 transition font-medium">Preguntas Frecuentes</a> <a href="#contact" class="hover:text-blue-200 transition font-medium">Contacto</a>
       </div>
 
-      <!-- Botón hamburguesa móvil -->
       <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
@@ -120,18 +132,15 @@
     </div>
   </nav>
 
-  <!-- Menú móvil (SIN “Funciones”) -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="flex flex-col items-center space-y-4">
-      <!-- <a href="#features">Funciones</a>  -->
       <a href="#how-it-works" class="text-white hover:text-blue-200 transition">Cómo Funciona</a>
       <a href="#testimonials" class="text-white hover:text-blue-200 transition">Testimonios</a>
-      <a href="#contact" class="text-white hover:text-blue-200 transition">Contacto</a>
+      <a href="#faq" class="text-white hover:text-blue-200 transition">Preguntas Frecuentes</a> <a href="#contact" class="text-white hover:text-blue-200 transition">Contacto</a>
       <a href="#contact" class="bg-white text-primary font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition mt-4">Solicitar Demo</a>
     </div>
   </div>
 
-  <!-- ===== Hero con video + copy abajo ===== -->
   <div class="video-container">
     <video
       class="video-background"
@@ -142,7 +151,6 @@
     </video>
     <div class="video-overlay"></div>
 
-    <!-- Contenido de impacto (movido aquí) -->
     <header class="hero-content" aria-label="Mensaje principal">
       <div class="hero-card rounded-2xl p-5 md:p-8 text-white">
         <div class="mb-3">
@@ -166,7 +174,6 @@
           </a>
         </div>
 
-        <!-- KPIs (ocultos en móvil) -->
         <div class="hero-kpis mt-6 grid grid-cols-3 gap-4 text-sm text-white/90 hidden md:grid">
           <div class="pr-4"><div class="font-extrabold text-xl">-70%</div><div>No-show</div></div>
           <div class="pr-4"><div class="font-extrabold text-xl">≤ 30s</div><div>Primera respuesta</div></div>
@@ -181,7 +188,6 @@
     </header>
   </div>
 
-  <!-- ===== Features ===== -->
   <section id="features" class="content-section bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-8">
@@ -204,14 +210,13 @@
     </div>
   </section>
 
-  <!-- ===== Cómo funciona ===== -->
   <section id="how-it-works" class="content-section bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Así de simple funciona</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Integración en minutos, resultados desde el primer día.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
         <div class="text-center p-6">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">1</div>
           <h3 class="font-bold text-xl mb-3">Consulta</h3>
@@ -225,7 +230,7 @@
         </div>
         <div class="text-center p-6">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">2</div>
-          <h3 class="font-bold text-xl mb-3">Confirmación</h3>
+          <h3 class="font-bold text-xl mb-3">Disponibilidad</h3>
           <p class="text-gray-600 mb-4">Odento ofrece 3 horarios disponibles</p>
           <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
             <div class="text-gray-500">
@@ -237,11 +242,22 @@
         <div class="text-center p-6">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">3</div>
           <h3 class="font-bold text-xl mb-3">Pago y Confirmación</h3>
-          <p class="text-gray-600 mb-4">Link seguro para seña y confirmación</p>
+          <p class="text-gray-600 mb-4">Link seguro para seña y confirmación del turno</p>
           <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
             <div class="text-gray-500">
               <i class="fas fa-lock text-4xl text-green-500 mb-3"></i>
               <p class="text-sm">"Reserva con una seña de $500"</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center p-6">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">4</div>
+          <h3 class="font-bold text-xl mb-3">Atención Personalizada</h3>
+          <p class="text-gray-600 mb-4">Si la consulta es compleja, se deriva a un humano</p>
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center p-4">
+            <div class="text-gray-500">
+              <i class="fas fa-user-doctor text-4xl text-gray-500 mb-3"></i>
+              <p class="text-sm">"Un momento, te comunico con un asistente."</p>
             </div>
           </div>
         </div>
@@ -254,7 +270,6 @@
     </div>
   </section>
 
-  <!-- ===== Testimonios (con rostros ficticios) ===== -->
   <section id="testimonials" class="content-section bg-gradient-to-r from-primary to-secondary">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
@@ -263,7 +278,6 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Testimonio 1 -->
         <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
           <div class="text-yellow-400 mb-4">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -279,7 +293,6 @@
           </div>
         </div>
 
-        <!-- Testimonio 2 -->
         <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
           <div class="text-yellow-400 mb-4">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -295,7 +308,6 @@
           </div>
         </div>
 
-        <!-- Testimonio 3 -->
         <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
           <div class="text-yellow-400 mb-4">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -311,13 +323,66 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ===== Contacto / CTA ===== -->
-  <section id="contact" class="content-section bg-gray-50">
+  <section id="faq" class="content-section bg-gray-50">
     <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Preguntas Frecuentes</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Resolvemos tus dudas para que tomes la mejor decisión.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="faq-item bg-white rounded-lg shadow-md">
+          <details>
+            <summary class="flex justify-between items-center p-5 font-semibold text-gray-800">
+              ¿Odento funciona con mi software de gestión actual?
+              <i class="fas fa-plus faq-icon text-primary"></i>
+            </summary>
+            <div class="p-5 border-t border-gray-200 text-gray-600">
+              <p>Sí. Odento está diseñado para integrarse de forma sencilla con la mayoría de los sistemas de gestión de clínicas dentales. Nuestro equipo técnico te asistirá durante todo el proceso para asegurar una transición fluida y sin interrupciones.</p>
+            </div>
+          </details>
+        </div>
+        <div class="faq-item bg-white rounded-lg shadow-md">
+          <details>
+            <summary class="flex justify-between items-center p-5 font-semibold text-gray-800">
+              ¿Qué sucede si un paciente tiene una consulta compleja o una urgencia?
+              <i class="fas fa-plus faq-icon text-primary"></i>
+            </summary>
+            <div class="p-5 border-t border-gray-200 text-gray-600">
+              <p>Nuestra IA está entrenada para identificar la urgencia o complejidad de una consulta. Si detecta una situación que requiere atención humana (como una urgencia, una pregunta médica específica o si el paciente lo solicita), la conversación es derivada automáticamente a un miembro de tu equipo, quien recibe una notificación para continuar la atención de forma inmediata.</p>
+            </div>
+          </details>
+        </div>
+        <div class="faq-item bg-white rounded-lg shadow-md">
+          <details>
+            <summary class="flex justify-between items-center p-5 font-semibold text-gray-800">
+              ¿Es seguro el sistema de pagos para las señas?
+              <i class="fas fa-plus faq-icon text-primary"></i>
+            </summary>
+            <div class="p-5 border-t border-gray-200 text-gray-600">
+              <p>Totalmente. Utilizamos pasarelas de pago líderes en el mercado que cumplen con los más altos estándares de seguridad (PCI). Los datos de los pacientes están encriptados y protegidos en todo momento, garantizando transacciones seguras y confiables.</p>
+            </div>
+          </details>
+        </div>
+        <div class="faq-item bg-white rounded-lg shadow-md">
+          <details>
+            <summary class="flex justify-between items-center p-5 font-semibold text-gray-800">
+              ¿Cuánto tiempo tarda la implementación?
+              <i class="fas fa-plus faq-icon text-primary"></i>
+            </summary>
+            <div class="p-5 border-t border-gray-200 text-gray-600">
+              <p>La implementación básica se completa en menos de 24 horas. En un plazo de 7 días, tendrás un piloto completamente funcional y adaptado a las necesidades de tu clínica. ¡Empezarás a ver resultados desde la primera semana!</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="content-section bg-white pt-10"> <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
         <div class="md:flex">
           <div class="md:w-1/2 bg-gradient-to-br from-primary to-secondary p-10 text-white">
@@ -348,7 +413,6 @@
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
   <footer class="bg-gray-900 text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
@@ -371,7 +435,7 @@
             <li><a href="#features" class="text-gray-400 hover:text-white transition">Funciones</a></li>
             <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition">Cómo Funciona</a></li>
             <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonios</a></li>
-            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contacto</a></li>
+            <li><a href="#faq" class="text-gray-400 hover:text-white transition">Preguntas Frecuentes</a></li> <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contacto</a></li>
           </ul>
         </div>
         <div>
@@ -398,12 +462,10 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
   <a href="https://wa.me/5493804567540" target="_blank" rel="noopener" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-50 animate-pulse">
     <i class="fab fa-whatsapp text-white text-3xl"></i>
   </a>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const video = document.querySelector('.video-background');
@@ -420,7 +482,25 @@
         document.body.style.overflow = open ? 'hidden' : '';
       }
       hamburger.addEventListener('click', ()=>toggleMenu());
-      document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click', ()=>toggleMenu(false)));
+      document.querySelectorAll('#mobileMenu a, nav a').forEach(a=> {
+        a.addEventListener('click', function(e) {
+          if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              // Si el menú móvil está abierto, ciérralo antes de desplazarte
+              if (mobileMenu.classList.contains('active')) {
+                toggleMenu(false);
+              }
+              // Espera un poco para que el menú se cierre antes de que comience el scroll
+              setTimeout(() => {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+              }, 300);
+            }
+          }
+        });
+      });
       document.addEventListener('click', e=>{
         if(mobileMenu.classList.contains('active')){
           const inside=mobileMenu.contains(e.target), onHamb=hamburger.contains(e.target);

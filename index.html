@@ -56,7 +56,7 @@
 
     @keyframes heroRise{
       from{ transform:translate(-50%, 18px); opacity:0 }
-      to{   transform:translate(-50%, 0);    opacity:1 }
+      to{   transform:translate(-50%, 0);   opacity:1 }
     }
 
     /* ===== Navbar / Menú ===== */
@@ -110,12 +110,11 @@
 <body class="bg-gray-50">
   <nav class="navbar text-white py-4 px-6 sticky top-0 z-50" role="navigation" aria-label="Principal">
     <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center">
-        <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center mr-3">
-          <i class="fas fa-tooth text-primary text-xl"></i>
-        </div>
-        <span class="text-2xl font-bold">ODENTO</span>
-      </div>
+      <!-- ===== LOGO REEMPLAZADO ===== -->
+      <a href="#" class="flex items-center">
+        <img src="image_0a5de0.png" alt="Odento Logo" class="h-10">
+      </a>
+      <!-- ===== FIN DEL CAMBIO ===== -->
 
       <div class="desktop-nav flex space-x-8">
         <a href="#features" class="hover:text-blue-200 transition font-medium">Funciones</a>
@@ -423,10 +422,11 @@
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
-          <div class="flex items-center mb-6">
-            <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center mr-3"><i class="fas fa-tooth text-primary text-xl"></i></div>
-            <span class="text-2xl font-bold">ODENTO</span>
-          </div>
+          <!-- ===== LOGO REEMPLAZADO ===== -->
+          <a href="#" class="inline-block mb-6">
+             <img src="image_0a5de0.png" alt="Odento Logo" class="h-10">
+          </a>
+          <!-- ===== FIN DEL CAMBIO ===== -->
           <p class="text-gray-400 mb-4">Automatización de turnos por WhatsApp para clínicas dentales.</p>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>

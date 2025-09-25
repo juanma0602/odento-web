@@ -14,17 +14,16 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     body{ font-family:'Poppins',sans-serif; scroll-behavior:smooth; overflow-x:hidden }
 
-    /* ===== Logo Styling (Añadido/Modificado) ===== */
+    /* ===== Logo Styling (Ajustes para el nuevo logo) ===== */
     .site-logo-img {
         /* Controla el tamaño de la imagen del logo en el header/footer */
         height: 40px; 
         width: auto;
     }
     .navbar .site-logo-img {
-        /* Para que el logo en la navbar no tenga borde blanco */
-        margin-right: 0.75rem; /* Ajusta el margen si es necesario */
+        /* Asegura que no haya espacio extra por el margen del ícono anterior */
+        margin-right: 0.75rem; 
     }
-
 
     /* ===== Hero video ===== */
     .video-container{ position:relative; width:100%; height:100vh; overflow:hidden; background:#0b1b34 }
@@ -123,11 +122,11 @@
   <nav class="navbar text-white py-4 px-6 sticky top-0 z-50" role="navigation" aria-label="Principal">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
-                <a href="#" class="flex items-center">
-          <img src="img/odento-logo.png" alt="Logo de Odento" class="site-logo-img">
+                <a href="#" class="flex items-center">
+          <img src="images/odento-logo.png" alt="Logo de Odento" class="site-logo-img">
           <span class="text-2xl font-bold">ODENTO</span>
         </a>
-              </div>
+              </div>
 
       <div class="desktop-nav flex space-x-8">
         <a href="#features" class="hover:text-blue-200 transition font-medium">Funciones</a>
@@ -197,7 +196,7 @@
       <div class="text-center mt-3 hidden md:block">
         <a href="#features" class="inline-flex items-center text-white/80 hover:text-white transition">
           Deslizar <i class="fas fa-chevron-down ml-2 animate-bounce"></i>
-          </a>
+        </a>
       </div>
     </header>
   </div>
@@ -221,7 +220,7 @@
           <p class="text-gray-600 text-center">Atiende mensajes de texto y audios desde cualquier dispositivo. Sin apps adicionales.</p>
         </div>
       </div>
-    </div>
+      </div>
   </section>
 
   <section id="how-it-works" class="content-section bg-white">
@@ -266,7 +265,7 @@
               <i class="fas fa-lock text-4xl text-green-500 mb-3"></i>
               <p class="text-sm">"Reserva con una seña de $500"</p>
             </div>
-          </div>
+            </div>
         </div>
         <div class="text-center p-6">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 text-2xl font-bold mx-auto mb-4">4</div>
@@ -293,7 +292,7 @@
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
         <p class="text-blue-100 max-w-2xl mx-auto">Clínicas dentales que ya automatizaron su gestión de turnos</p>
-        </div>
+      </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
@@ -436,9 +435,9 @@
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <div class="flex items-center mb-6">
-                        <img src="img/odento-logo.png" alt="Logo de Odento" class="site-logo-img mr-3">
+                        <img src="images/odento-logo.png" alt="Logo de Odento" class="site-logo-img mr-3">
             <span class="text-2xl font-bold">ODENTO</span>
-                      </div>
+                      </div>
           <p class="text-gray-400 mb-4">Automatización de turnos por WhatsApp para clínicas dentales.</p>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
@@ -478,7 +477,7 @@
         <p>© 2025 Odento.lat - Todos los derechos reservados. Diseñado para clínicas dentales.</p>
         <p class="mt-2">Odento no brinda diagnóstico ni atención de urgencias. Mensajes sensibles se derivan a un profesional.</p>
       </div>
-      </div>
+    </div>
   </footer>
 
   <a href="https://wa.me/5493804567540" target="_blank" rel="noopener" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-50 animate-pulse">

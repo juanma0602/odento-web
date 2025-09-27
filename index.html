@@ -36,8 +36,7 @@
       position:absolute; left:50%;
       bottom:clamp(16px,6vh,88px);
       transform:translateX(-50%);
-      /* === CAMBIO AQUÍ: Reducción del ancho === */
-      width:min(550px,80%); /* 50% de 1100px es 550px. El 80% para asegurar visibilidad en móviles. */
+      width:min(550px,80%);
       z-index:2;
       animation:heroRise .8s cubic-bezier(.2,.8,.2,1) .1s both;
     }
@@ -86,8 +85,39 @@
     }
     @media (max-width:480px) and (orientation:portrait){
       .video-background{ object-fit:cover; object-position:35% 50% }
-      .hero-content{ bottom:clamp(12px,6vh,48px) }
+      /* ===== Ajustes para el cuadro en pantallas pequeñas ===== */
+      .hero-content{ 
+        bottom:clamp(12px,6vh,48px);
+        width:min(400px, 90%); /* Asegura un ancho mínimo razonable para móviles */
+      }
+      /* Reduce aún más el padding y el texto para móviles */
+      .hero-card { padding: 1.25rem; /* p-5 de Tailwind */ }
+      .hero-card h1 { font-size: 2rem; /* text-3xl de Tailwind */ }
+      .hero-card p { font-size: 1rem; /* text-base de Tailwind */ }
+      .hero-eyebrow { padding: .25rem .5rem; font-size: .75rem; /* text-xs de Tailwind */ }
+      .hero-kpis { display: none !important; } /* Asegura que los KPIs estén ocultos */
     }
+    /* ===== Ajustes para el cuadro en tamaños medianos (tablets y monitores pequeños) ===== */
+    @media (min-width: 481px) and (max-width: 1024px) {
+      .hero-content {
+        width:min(500px, 75%); /* Más estrecho que antes, pero con margen */
+        bottom:clamp(24px, 8vh, 96px); /* Un poco más alto para compensar */
+      }
+      .hero-card { padding: 1.5rem; /* p-6 o p-7 de Tailwind */ }
+      .hero-card h1 { font-size: 2.5rem; /* text-4xl de Tailwind */ }
+      .hero-card p { font-size: 1.125rem; /* text-lg de Tailwind */ }
+    }
+    /* ===== Ajustes para el cuadro en tamaños grandes (monitores de escritorio) ===== */
+    @media (min-width: 1025px) {
+      .hero-content {
+        width:min(500px, 40%); /* Ancho más compacto para monitores grandes */
+        bottom:clamp(48px, 10vh, 120px); /* Ajusta la posición vertical */
+      }
+      .hero-card { padding: 2rem; /* p-8 de Tailwind */ }
+      .hero-card h1 { font-size: 2.8rem; /* un poco menos que text-5xl */ }
+      .hero-card p { font-size: 1.15rem; /* similar a text-lg */ }
+    }
+
 
     .content-section{ padding:5rem 0 }
     @keyframes fadeIn{ from{opacity:0} to{opacity:1} }

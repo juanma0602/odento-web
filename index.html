@@ -54,12 +54,11 @@
             object-fit: cover;
             transform: scale(1.05);
         }
-        /* CORRECCIÓN VISUAL: Overlay más oscuro y con blur para que el texto se lea perfecto */
         .video-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(11, 17, 32, 0.75); /* 75% de oscuridad sobre el video */
-            backdrop-filter: blur(3px); /* Desenfoque sutil para separar fondo de texto */
+            background: rgba(11, 17, 32, 0.75); /* Oscuridad para contraste */
+            backdrop-filter: blur(3px); /* Desenfoque cinemático */
             z-index: 1;
         }
     </style>
@@ -139,20 +138,25 @@
         <div class="container mx-auto px-6 mb-6 text-center">
              <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">Stack Tecnológico</p>
         </div>
-        <div class="flex justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 flex-wrap px-6">
+        <div class="flex justify-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 flex-wrap px-6">
             
+            <div class="flex items-center gap-3 text-lg font-bold text-white group">
+                <i class="fa-regular fa-credit-card text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                Mercado Pago
+            </div>
+
             <div class="flex items-center gap-3 text-lg font-bold text-white">
                 <i class="fa-brands fa-whatsapp text-green-400"></i> Cloud API
             </div>
             
             <div class="flex items-center gap-3 text-lg font-bold text-white group">
                 <i class="fa-solid fa-brain text-purple-400 group-hover:scale-110 transition-transform"></i> 
-                OpenAI GPT-4o
+                GPT-4o
             </div>
             
             <div class="flex items-center gap-3 text-lg font-bold text-white group">
                 <i class="fa-solid fa-wand-magic-sparkles text-blue-400 group-hover:animate-pulse"></i> 
-                Google Gemini
+                Gemini
             </div>
             
             <div class="flex items-center gap-3 text-lg font-bold text-white">

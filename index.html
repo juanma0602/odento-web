@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odento · Asistente clínico con IA para odontólogos</title>
-    <meta name="description" content="Hablá, envía imágenes y recibí informes radiológicos al instante. Odento redacta fichas, audita, gestiona turnos, cobra señas y genera documentos legales por voz.">
+    <meta name="description" content="Hablá, envía imágenes y recibí informes radiológicos al instante. Odento redacta fichas, audita, gestiona turnos, cobra señas y genera borradores de documentos legales por voz.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -80,7 +80,7 @@
             
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#asistente" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-microphone-lines text-xs"></i> Voz + Visión</a>
-                <a href="#documentos" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-regular fa-file-lines text-xs"></i> Documentos IA</a>
+                <a href="#documentos" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-regular fa-file-lines text-xs"></i> Borradores IA</a>
                 <a href="#auditoria" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-shield-halved text-xs"></i> Blindaje Legal</a>
                 <a href="#gestion" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-regular fa-calendar text-xs"></i> Gestión 24/7</a>
                 <a href="#roi" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-chart-line text-xs"></i> ROI</a>
@@ -109,12 +109,12 @@
             <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-8 leading-[0.9] tracking-tight drop-shadow-2xl">
                 <span class="block">Hablá,</span>
                 <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-200 to-brand-400 text-glow">Envía una imagen</span>
-                <span class="block text-4xl md:text-5xl mt-4 text-slate-300 font-light">y recibí el informe listo en 5 segundos</span>
+                <span class="block text-4xl md:text-5xl mt-4 text-slate-300 font-light">y recibí el borrador listo en 5 segundos</span>
             </h1>
             
             <p class="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-md">
                 Mientras te sacás los guantes, Odento redacta la historia clínica, analiza la radiografía,<br class="hidden md:block">
-                <span class="text-brand-300 font-semibold">genera presupuestos, recetas, derivaciones y consentimientos</span>, audita riesgos legales, agenda el próximo turno y cobra la seña. Todo automático.
+                <span class="text-brand-300 font-semibold">genera borradores de presupuestos, recetas, derivaciones y consentimientos</span>, audita riesgos legales, agenda el próximo turno y cobra la seña. Todo automático, pero siempre bajo tu revisión y firma.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -138,7 +138,7 @@
                     <div class="text-xs text-slate-400">menos ausentismo</div>
                 </div>
                 <div class="glass-card rounded-2xl p-4 text-center">
-                    <div class="text-3xl font-black text-white">+20<span class="text-brand-400 text-lg ml-1">h</span></div>
+                    <div class="text-3xl font-black text-white">+25<span class="text-brand-400 text-lg ml-1">h</span></div>
                     <div class="text-xs text-slate-400">semanales recuperadas</div>
                 </div>
                 <div class="glass-card rounded-2xl p-4 text-center">
@@ -185,7 +185,7 @@
             </div>
             <div class="flex items-center gap-3 text-xl font-bold text-white">
                 <i class="fa-regular fa-file-lines text-blue-400 text-3xl"></i>
-                Documentos IA
+                Borradores IA
             </div>
         </div>
     </div>
@@ -216,7 +216,7 @@
                         </div>
                         <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 mb-6">
                             <p class="text-slate-300 italic leading-relaxed">
-                                "Pieza 36 con caries profunda, voy a hacer endodoncia. El paciente es David Visval, 45 años, toma Losartán por hipertensión. Adjunto la radiografía panorámica que le saqué recién. <span class="text-brand-400">Preparame un presupuesto para la endodoncia y una receta de amoxicilina 500 mg.</span>"
+                                "Pieza 36 con caries profunda, voy a hacer endodoncia. El paciente es David Visval, 45 años, toma Losartán por hipertensión. Adjunto la radiografía panorámica que le saqué recién. <span class="text-brand-400">Preparame un borrador de presupuesto para la endodoncia y una receta de amoxicilina 500 mg.</span>"
                             </p>
                             <div class="flex items-center gap-2 mt-4">
                                 <i class="fa-solid fa-image text-brand-400"></i>
@@ -250,8 +250,8 @@
                             <div class="flex items-start gap-3">
                                 <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-xs mt-0.5">4</div>
                                 <div>
-                                    <h4 class="text-white font-bold">Documentos generados</h4>
-                                    <p class="text-slate-400 text-sm">Presupuesto de endodoncia · Receta de amoxicilina · Consentimiento informado</p>
+                                    <h4 class="text-white font-bold">Borradores de documentos generados</h4>
+                                    <p class="text-slate-400 text-sm">Presupuesto de endodoncia · Receta de amoxicilina · Consentimiento informado (listos para revisar y firmar)</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3">
@@ -272,7 +272,7 @@
                             <div class="w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
                                 <i class="fa-regular fa-file-lines"></i>
                             </div>
-                            <span class="text-white font-medium">Documentos generados automáticamente</span>
+                            <span class="text-white font-medium">Borradores generados automáticamente</span>
                             <span class="text-xs text-slate-500 ml-auto">5 segundos después</span>
                         </div>
 
@@ -280,38 +280,38 @@
                             <!-- Informe radiológico (resumido) -->
                             <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
                                 <p class="text-brand-400 text-xs font-bold mb-1">⟦ INFORME RADIOLÓGICO · ODT-2502-9834 ⟧</p>
-                                <p class="text-xs text-slate-300">Caries profunda en 36, lesión periapical... <a href="#" class="text-brand-400">ver completo</a></p>
+                                <p class="text-xs text-slate-300">Caries profunda en 36, lesión periapical... <a href="#" class="text-brand-400">ver borrador completo</a></p>
                             </div>
                             <!-- Presupuesto -->
                             <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-green-400 text-xs font-bold mb-1">⟦ PRESUPUESTO · ENDODONCIA 36 ⟧</p>
-                                <p class="text-xs text-slate-300">Honorarios: $45.000 · Incluye apertura, conductometría, obturación. <a href="#" class="text-brand-400">link editable</a></p>
+                                <p class="text-green-400 text-xs font-bold mb-1">⟦ BORRADOR DE PRESUPUESTO · ENDODONCIA 36 ⟧</p>
+                                <p class="text-xs text-slate-300">Honorarios: $45.000 · Incluye apertura, conductometría, obturación. <span class="text-amber-400">(requiere revisión y firma)</span> · <a href="#" class="text-brand-400">link editable</a></p>
                             </div>
                             <!-- Receta -->
                             <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-amber-400 text-xs font-bold mb-1">⟦ RECETA MÉDICA · AMOXICILINA 500 mg ⟧</p>
-                                <p class="text-xs text-slate-300">Tomar 1 cápsula cada 8 horas por 7 días. <a href="#" class="text-brand-400">link editable</a></p>
+                                <p class="text-amber-400 text-xs font-bold mb-1">⟦ BORRADOR DE RECETA · AMOXICILINA 500 mg ⟧</p>
+                                <p class="text-xs text-slate-300">Tomar 1 cápsula cada 8 horas por 7 días. <span class="text-amber-400">(requiere firma profesional)</span> · <a href="#" class="text-brand-400">link editable</a></p>
                             </div>
                             <!-- Consentimiento -->
                             <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-red-400 text-xs font-bold mb-1">⟦ CONSENTIMIENTO INFORMADO · ENDODONCIA ⟧</p>
-                                <p class="text-xs text-slate-300">Documento legal listo para firma. <a href="#" class="text-brand-400">link editable</a></p>
+                                <p class="text-red-400 text-xs font-bold mb-1">⟦ BORRADOR DE CONSENTIMIENTO INFORMADO · ENDODONCIA ⟧</p>
+                                <p class="text-xs text-slate-300">Documento legal listo para revisión y firma. <a href="#" class="text-brand-400">link editable</a></p>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-500 mt-4 text-center">Todos los documentos se guardan en la ficha del paciente con trazabilidad completa.</p>
+                        <p class="text-xs text-slate-500 mt-4 text-center">Todos los borradores se guardan en la ficha del paciente. El Dr. los revisa, ajusta y firma.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: DOCUMENTOS AUTOMÁTICOS POR VOZ -->
+    <!-- NUEVA SECCIÓN: BORRADORES AUTOMÁTICOS POR VOZ (corregida) -->
     <section id="documentos" class="py-24 bg-brand-dark">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-brand-400 font-bold text-sm uppercase tracking-widest">DOCUMENTACIÓN INSTANTÁNEA</span>
-                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Olvidate de escribir <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">presupuestos, recetas y consentimientos</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Con un simple comando de voz, Odento genera documentos profesionales, personalizados y legalmente válidos. Todo queda almacenado en la nube, con link editable y trazabilidad.</p>
+                <span class="text-brand-400 font-bold text-sm uppercase tracking-widest">DOCUMENTACIÓN ASISTIDA</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Borradores listos en 5 segundos,<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">usted decide y firma</span></h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Con un simple comando de voz, Odento genera borradores de presupuestos, recetas, derivaciones y consentimientos. Usted los revisa, ajusta si es necesario y los firma. Todo queda almacenado en la nube, con trazabilidad completa.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -319,22 +319,22 @@
                     <div class="w-16 h-16 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-file-invoice"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Presupuestos</h4>
-                    <p class="text-slate-400">"Generá un presupuesto para una corona de zirconio en pieza 11" → Odento crea un documento con desglose de costos, forma de pago y validez, listo para enviar al paciente.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de presupuestos</h4>
+                    <p class="text-slate-400">"Generá un borrador de presupuesto para una corona de zirconio en pieza 11" → Odento crea un documento con desglose de costos, forma de pago y validez. Usted lo revisa, ajusta y lo envía al paciente.</p>
                 </div>
                 <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-purple-500/50 transition-all group">
                     <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-prescription-bottle"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Recetas médicas</h4>
-                    <p class="text-slate-400">"Recetame amoxicilina 500 mg cada 8 horas por 7 días para el paciente Gómez" → Odento genera la receta con dosis, duración y alertas de interacciones.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de recetas</h4>
+                    <p class="text-slate-400">"Prepará un borrador de receta de amoxicilina 500 mg cada 8 horas por 7 días para el paciente Gómez" → Odento genera la receta con dosis, duración y alertas. Usted la firma después de verificarla.</p>
                 </div>
                 <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-green-500/50 transition-all group">
                     <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-file-signature"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Consentimientos informados</h4>
-                    <p class="text-slate-400">"Prepará un consentimiento para extracción de cordal" → Odento genera un documento legal con todos los riesgos y beneficios, listo para firmar.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de consentimientos</h4>
+                    <p class="text-slate-400">"Generá un borrador de consentimiento para extracción de cordal" → Odento prepara un documento legal con todos los riesgos y beneficios. Usted lo revisa y lo hace firmar al paciente.</p>
                 </div>
             </div>
 
@@ -345,8 +345,8 @@
                         <i class="fa-solid fa-microphone-lines"></i>
                     </div>
                     <div class="flex-1">
-                        <p class="text-white text-lg mb-2">"<span class="text-brand-400">Dr. Elite</span>, generá un presupuesto para la paciente Valeria Torres: 4 implantes Straumann con elevación de seno y coronas de zirconio. Total $5.200.000, 50% al iniciar y el resto en 4 cuotas."</p>
-                        <p class="text-slate-400">Odento procesa el dictado y en 5 segundos devuelve un link editable a un presupuesto formal en Google Docs, listo para enviar al paciente.</p>
+                        <p class="text-white text-lg mb-2">"<span class="text-brand-400">Dr. Elite</span>, generá un borrador de presupuesto para la paciente Valeria Torres: 4 implantes Straumann con elevación de seno y coronas de zirconio. Total $5.200.000, 50% al iniciar y el resto en 4 cuotas."</p>
+                        <p class="text-slate-400">Odento procesa el dictado y en 5 segundos devuelve un link editable a un borrador de presupuesto formal en Google Docs. Usted lo revisa, lo ajusta si es necesario y luego lo envía al paciente.</p>
                     </div>
                 </div>
             </div>
@@ -358,7 +358,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Tus imágenes <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">hablan por sí solas</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Sacá una foto con el celular o adjuntá una radiografía por WhatsApp. Odento la analiza al instante y te devuelve un informe técnico de nivel especialista.</p>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Sacá una foto con el celular o adjuntá una radiografía por WhatsApp. Odento la analiza al instante y te devuelve un borrador de informe técnico de nivel especialista.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -380,8 +380,8 @@
                     <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-regular fa-file-pdf"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Informes automáticos</h4>
-                    <p class="text-slate-400">Documento profesional con hallazgos, mediciones y recomendaciones, listo para archivar o derivar.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de informes</h4>
+                    <p class="text-slate-400">Documento profesional con hallazgos, mediciones y recomendaciones, listo para que usted lo revise y complete.</p>
                 </div>
             </div>
 
@@ -400,7 +400,7 @@
             <div class="text-center mb-16">
                 <span class="text-red-400 font-bold text-sm uppercase tracking-widest">PROTECCIÓN LEGAL CONTINUA</span>
                 <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Tu mejor defensa <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-500">contra demandas</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Odento revisa cada historia clínica automáticamente. Detecta omisiones, alerta sobre interacciones farmacológicas y genera consentimientos informados. Todo con trazabilidad completa.</p>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Odento revisa cada historia clínica automáticamente. Detecta omisiones, alerta sobre interacciones farmacológicas y genera borradores de consentimientos informados. Todo con trazabilidad completa, pero la decisión final siempre es suya.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -409,7 +409,7 @@
                         <i class="fa-solid fa-file-circle-exclamation"></i>
                     </div>
                     <h4 class="text-2xl font-bold text-white mb-3">Detección de omisiones</h4>
-                    <p class="text-slate-400 mb-4">¿Falta registro de alergias? ¿No hay consentimiento? Odento lo señala.</p>
+                    <p class="text-slate-400 mb-4">¿Falta registro de alergias? ¿No hay borrador de consentimiento? Odento lo señala para que usted lo complete.</p>
                     <div class="bg-red-950/30 p-4 rounded-xl border border-red-800/30">
                         <p class="text-sm text-red-300"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Alerta: Bart Simpson sin registro de alergias.</p>
                     </div>
@@ -419,7 +419,7 @@
                         <i class="fa-solid fa-pills"></i>
                     </div>
                     <h4 class="text-2xl font-bold text-white mb-3">Alertas farmacológicas</h4>
-                    <p class="text-slate-400 mb-4">Si recetás algo contraindicado, el sistema te avisa.</p>
+                    <p class="text-slate-400 mb-4">Si recetás algo contraindicado, el sistema te avisa antes de que generes el borrador.</p>
                     <div class="bg-yellow-950/30 p-4 rounded-xl border border-yellow-800/30">
                         <p class="text-sm text-yellow-300"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Ibuprofeno + Losartán: riesgo.</p>
                     </div>
@@ -428,10 +428,10 @@
                     <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6">
                         <i class="fa-solid fa-file-signature"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Consentimientos automáticos</h4>
-                    <p class="text-slate-400 mb-4">Genera y archiva consentimientos para cada procedimiento.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de consentimientos</h4>
+                    <p class="text-slate-400 mb-4">Genera borradores de consentimientos para cada procedimiento, listos para que usted los revise y haga firmar.</p>
                     <div class="bg-green-950/30 p-4 rounded-xl border border-green-800/30">
-                        <p class="text-sm text-green-300"><i class="fa-solid fa-check mr-2"></i> Consentimiento de endodoncia listo.</p>
+                        <p class="text-sm text-green-300"><i class="fa-solid fa-check mr-2"></i> Borrador de consentimiento para endodoncia listo.</p>
                     </div>
                 </div>
             </div>
@@ -518,17 +518,17 @@
                     <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">10-15 min</div>
                     <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Voz (5 seg)</div>
 
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Documentos (presupuestos, recetas, consentimientos)</div>
+                    <div class="p-6 border-b border-slate-700 text-slate-300">Borradores de documentos (presupuestos, recetas, consentimientos)</div>
                     <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">20-30 min</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Voz + IA (5 seg)</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Voz + IA (5 seg) · listos para revisar</div>
 
                     <div class="p-6 border-b border-slate-700 text-slate-300">Análisis de radiografías</div>
                     <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Visual (subjetivo)</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Visión IA + informe</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Visión IA + borrador de informe</div>
 
                     <div class="p-6 border-b border-slate-700 text-slate-300">Auditoría de historias</div>
                     <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Ninguna</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Automática</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Automática (alertas)</div>
 
                     <div class="p-6 text-slate-300">Disponibilidad</div>
                     <div class="p-6 border-l border-slate-700 text-center text-slate-500">Horario comercial</div>
@@ -554,7 +554,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-2xl font-bold text-white mb-1">+25 horas semanales</h4>
-                                    <p class="text-slate-400">recuperadas gracias a la automatización de fichas, documentos, turnos y cobros.</p>
+                                    <p class="text-slate-400">recuperadas gracias a la automatización de fichas, borradores, turnos y cobros.</p>
                                 </div>
                             </div>
                             <div class="flex gap-5">
@@ -602,7 +602,7 @@
                             </div>
                         </div>
                         <div class="mt-8 p-4 bg-slate-900/50 rounded-xl border border-slate-700">
-                            <p class="text-white text-sm">"Antes tardaba 20 minutos en hacer un presupuesto. Ahora lo dicto y Odento lo genera en 5 segundos."</p>
+                            <p class="text-white text-sm">"Antes tardaba 20 minutos en hacer un presupuesto. Ahora dicto y Odento me da un borrador en 5 segundos, lo reviso y lo firmo."</p>
                             <p class="text-brand-400 mt-2 text-sm">— Dra. Laura, clínica en Madrid</p>
                         </div>
                     </div>
@@ -626,7 +626,7 @@
                     <div class="md:w-5/12 p-12 bg-white/5 border-r border-white/10 flex flex-col justify-between">
                         <div>
                             <h3 class="text-4xl font-black text-white mb-4">Viví la experiencia Odento</h3>
-                            <p class="text-xl text-white/70 mb-8">Agendá una demo personalizada de 20 minutos. Te mostramos cómo dictar, generar documentos, analizar imágenes y auditar fichas en tiempo real.</p>
+                            <p class="text-xl text-white/70 mb-8">Agendá una demo personalizada de 20 minutos. Te mostramos cómo dictar, generar borradores, analizar imágenes y auditar fichas en tiempo real.</p>
                             
                             <div class="space-y-5">
                                 <div class="flex items-center gap-4">
@@ -706,7 +706,7 @@
                         </div>
                         <span class="text-2xl font-bold text-white">Odento<span class="text-sm ml-2 font-light text-brand-400 tracking-wider">CLINIC OS</span></span>
                     </div>
-                    <p class="text-slate-400 max-w-md mb-6 text-base">El primer asistente clínico con IA que escucha, ve, documenta y protege. Automatización + auditoría para odontólogos que quieren recuperar su tiempo y dormir tranquilos.</p>
+                    <p class="text-slate-400 max-w-md mb-6 text-base">El primer asistente clínico con IA que escucha, ve, genera borradores y protege. Automatización + auditoría para odontólogos que quieren recuperar su tiempo y dormir tranquilos.</p>
                     <div class="flex gap-4">
                         <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-500 transition text-xl"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-500 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
@@ -720,7 +720,7 @@
                     <ul class="space-y-3 text-slate-400">
                         <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-microphone-lines text-xs"></i> Asistente por voz</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-eye text-xs"></i> Visión IA</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-file-lines text-xs"></i> Documentos automáticos</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-file-lines text-xs"></i> Borradores automáticos</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-shield-halved text-xs"></i> Auditoría médica</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-calendar text-xs"></i> Gestión 24/7</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-credit-card text-xs"></i> Cobro de señas</a></li>
@@ -741,7 +741,7 @@
             
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
                 <p class="text-base">&copy; 2026 Odento AI. Todos los derechos reservados.</p>
-                <p class="text-sm">Odento no reemplaza el criterio clínico profesional. Ante emergencias llamar al 911.</p>
+                <p class="text-sm">Odento no reemplaza el criterio clínico profesional. Los borradores generados deben ser revisados y firmados por el profesional.</p>
                 <p class="text-sm">Hecho con <i class="fa-solid fa-heart text-red-500"></i> para odontólogos</p>
             </div>
         </div>

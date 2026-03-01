@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odento · Asistente clínico con IA para odontólogos</title>
-    <meta name="description" content="Hablá, envía imágenes y recibí informes radiológicos al instante. Odento redacta fichas, audita, gestiona turnos, cobra señas y genera borradores de documentos legales por voz.">
+    <title>Odento · El Auditor IA que Blinda tu Clínica Odontológica</title>
+    <meta name="description" content="No solo automatiza: Odento audita, bloquea riesgos y protege tu matrícula legal. Dictá por voz, analiza RX y gestiona todo en segundos. Lanzamiento 2026.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <script>
         tailwind.config = {
             theme: {
@@ -31,7 +30,6 @@
             }
         }
     </script>
-
     <style>
         .text-glow {
             text-shadow: 0 0 50px rgba(14, 165, 233, 0.8);
@@ -64,10 +62,22 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255,255,255,0.05);
         }
+        .highlight-card {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+            box-shadow: 0 0 40px rgba(14, 165, 233, 0.5);
+        }
+        .demo-button {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body class="font-sans text-slate-300 bg-brand-dark antialiased overflow-x-hidden selection:bg-brand-500 selection:text-white">
-
     <!-- NAVBAR MEJORADA CON EFECTO GLASS -->
     <nav class="fixed w-full z-50 border-b border-white/5 bg-brand-dark/80 backdrop-blur-md transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -75,23 +85,22 @@
                 <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center text-white text-sm shadow-[0_0_20px_rgba(14,165,233,0.5)] group-hover:scale-110 transition-transform">
                     <i class="fa-solid fa-tooth text-lg"></i>
                 </div>
-                <span class="text-2xl font-bold tracking-tight text-white">Odento<span class="text-xs ml-2 font-light text-brand-300 tracking-wider">CLINIC OS</span></span>
+                <span class="text-2xl font-bold tracking-tight text-white">Odento<span class="text-xs ml-2 font-light text-brand-300 tracking-wider">ELITE</span></span>
             </a>
             
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#asistente" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-microphone-lines text-xs"></i> Voz + Visión</a>
-                <a href="#documentos" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-regular fa-file-lines text-xs"></i> Borradores IA</a>
-                <a href="#auditoria" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-shield-halved text-xs"></i> Blindaje Legal</a>
+                <a href="#auditor" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-shield-halved text-xs"></i> Auditor Activo</a>
+                <a href="#vision" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-eye text-xs"></i> Visión IA</a>
                 <a href="#gestion" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-regular fa-calendar text-xs"></i> Gestión 24/7</a>
-                <a href="#roi" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-chart-line text-xs"></i> ROI</a>
-                <a href="https://wa.me/5493804567540" class="px-5 py-2.5 bg-white text-brand-dark rounded-full font-bold hover:bg-brand-50 transition shadow-lg text-xs uppercase tracking-wide flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-green-600 text-base"></i> Agendar Demo
+                <a href="#roi" class="hover:text-brand-400 transition flex items-center gap-1"><i class="fa-solid fa-chart-line text-xs"></i> ROI Explosivo</a>
+                <a href="https://wa.me/5493804567540" class="px-5 py-2.5 bg-white text-brand-dark rounded-full font-bold hover:bg-brand-50 transition shadow-lg text-xs uppercase tracking-wide flex items-center gap-2 demo-button">
+                    <i class="fa-brands fa-whatsapp text-green-600 text-base"></i> Demo Gratis Ahora
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO ÉPICO CON VIDEO Y TEXTO PODEROSO (actualizado) -->
+    <!-- HERO ÉPICO CON VIDEO Y GANCHO DE VENTA -->
     <header class="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
         <div class="video-bg-container">
             <video autoplay muted loop playsinline class="video-bg">
@@ -99,51 +108,48 @@
             </video>
             <div class="video-overlay"></div>
         </div>
-
         <div class="container mx-auto px-6 relative z-10 text-center" data-aos="fade-up" data-aos-duration="1200">
             <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-brand-300 text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                REVOLUCIÓN EN ODONTOLOGÍA · LANZAMIENTO 2026
+                DISRUPTOR EN ODONTOLOGÍA · LANZAMIENTO 2026
             </div>
             
             <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-8 leading-[0.9] tracking-tight drop-shadow-2xl">
-                <span class="block">Hablá,</span>
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-200 to-brand-400 text-glow">Envía una imagen</span>
-                <span class="block text-4xl md:text-5xl mt-4 text-slate-300 font-light">y recibí el borrador listo en 5 segundos</span>
+                <span class="block">No es un Asistente.</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-200 to-brand-400 text-glow">Es tu Auditor Activo</span>
+                <span class="block text-4xl md:text-5xl mt-4 text-slate-300 font-light">Que blinda tu práctica contra demandas</span>
             </h1>
             
             <p class="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-md">
-                Mientras te sacás los guantes, Odento redacta la historia clínica, analiza la radiografía,<br class="hidden md:block">
-                <span class="text-brand-300 font-semibold">genera borradores de presupuestos, recetas, derivaciones y consentimientos</span>, audita riesgos legales, agenda el próximo turno y cobra la seña. Todo automático, pero siempre bajo tu revisión y firma.
+                Dictá por voz, envía RX y Odento audita riesgos, bloquea errores y agrega notas preventivas. Mientras otros transcriben, Odento te protege agregando lo que olvidás.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button onclick="document.getElementById('demo-form').scrollIntoView({behavior: 'smooth'})" class="min-w-[240px] px-8 py-5 bg-brand-600 text-white rounded-full font-bold text-lg hover:bg-brand-500 transition shadow-[0_0_40px_rgba(14,165,233,0.5)] flex items-center justify-center gap-3 group border border-brand-400/30 backdrop-blur-sm">
-                    <span>Ver demo en vivo</span>
+                <button onclick="document.getElementById('demo-form').scrollIntoView({behavior: 'smooth'})" class="min-w-[280px] px-8 py-5 bg-brand-600 text-white rounded-full font-bold text-lg hover:bg-brand-500 transition shadow-[0_0_40px_rgba(14,165,233,0.5)] flex items-center justify-center gap-3 group border border-brand-400/30 backdrop-blur-sm demo-button">
+                    <span>Prueba Gratuita 14 Días</span>
                     <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
                 </button>
-                <a href="#asistente" class="min-w-[240px] px-8 py-5 bg-white/5 border border-white/20 text-white rounded-full font-medium text-lg hover:bg-white/10 transition flex items-center justify-center gap-3 backdrop-blur-md">
-                    <i class="fa-regular fa-circle-play"></i> Conocer plataforma
+                <a href="#auditor" class="min-w-[280px] px-8 py-5 bg-white/5 border border-white/20 text-white rounded-full font-medium text-lg hover:bg-white/10 transition flex items-center justify-center gap-3 backdrop-blur-md">
+                    <i class="fa-regular fa-circle-play"></i> Descubre el Auditor Activo
                 </a>
             </div>
-
-            <!-- MÉTRICAS RÁPIDAS (actualizado) -->
+            <!-- MÉTRICAS RÁPIDAS CON ICONOS -->
             <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                 <div class="glass-card rounded-2xl p-4 text-center">
                     <div class="text-3xl font-black text-white">5<span class="text-brand-400 text-lg ml-1">seg</span></div>
-                    <div class="text-xs text-slate-400">procesamiento</div>
+                    <div class="text-xs text-slate-400">Auditoría instantánea</div>
                 </div>
                 <div class="glass-card rounded-2xl p-4 text-center">
-                    <div class="text-3xl font-black text-white">70<span class="text-brand-400 text-lg ml-1">%</span></div>
-                    <div class="text-xs text-slate-400">menos ausentismo</div>
+                    <div class="text-3xl font-black text-white">80<span class="text-brand-400 text-lg ml-1">%</span></div>
+                    <div class="text-xs text-slate-400">Demoras eliminadas</div>
                 </div>
                 <div class="glass-card rounded-2xl p-4 text-center">
-                    <div class="text-3xl font-black text-white">+25<span class="text-brand-400 text-lg ml-1">h</span></div>
-                    <div class="text-xs text-slate-400">semanales recuperadas</div>
+                    <div class="text-3xl font-black text-white">+30<span class="text-brand-400 text-lg ml-1">%</span></div>
+                    <div class="text-xs text-slate-400">Productividad</div>
                 </div>
                 <div class="glass-card rounded-2xl p-4 text-center">
-                    <div class="text-3xl font-black text-white">24/7</div>
-                    <div class="text-xs text-slate-400">automatización total</div>
+                    <div class="text-3xl font-black text-white">0</div>
+                    <div class="text-xs text-slate-400">Riesgos legales</div>
                 </div>
             </div>
         </div>
@@ -153,10 +159,10 @@
         </div>
     </header>
 
-    <!-- STACK TECNOLÓGICO (PODERÍO TÉCNICO) -->
+    <!-- STACK TECNOLÓGICO CON ICONOS ANIMADOS -->
     <div class="border-y border-white/5 bg-brand-dark py-16">
         <div class="container mx-auto px-6 mb-6 text-center">
-            <p class="text-xs font-bold text-slate-600 uppercase tracking-[0.3em]">INFRAESTRUCTURA DE NIVEL ENTERPRISE</p>
+            <p class="text-xs font-bold text-slate-600 uppercase tracking-[0.3em]">TECNOLOGÍA DISRUPTIVA</p>
         </div>
         <div class="flex justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-700 flex-wrap px-6">
             <div class="flex items-center gap-3 text-xl font-bold text-white group">
@@ -181,295 +187,180 @@
             </div>
             <div class="flex items-center gap-3 text-xl font-bold text-white">
                 <i class="fa-solid fa-shield text-red-400 text-3xl"></i>
-                Auditoría IA
-            </div>
-            <div class="flex items-center gap-3 text-xl font-bold text-white">
-                <i class="fa-regular fa-file-lines text-blue-400 text-3xl"></i>
-                Borradores IA
+                Auditoría IA Proactiva
             </div>
         </div>
     </div>
 
-    <!-- SECCIÓN ASISTENTE POR VOZ + VISIÓN (EL CORAZÓN) -->
-    <section id="asistente" class="py-28 bg-slate-900 relative overflow-hidden">
+    <!-- SECCIÓN AUDITOR ACTIVO (DISRUPTIVO) -->
+    <section id="auditor" class="py-28 bg-slate-900 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-20 left-10 w-64 h-64 bg-brand-500 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <span class="text-brand-400 font-bold text-sm uppercase tracking-widest">MANOS LIBRES · CERO ESCRITURA</span>
-                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">El odontólogo <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">solo habla</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Odento interpreta tu voz, entiende el contexto clínico, analiza imágenes y ejecuta. Sin tipear, sin clics, sin perder tiempo.</p>
+                <span class="text-brand-400 font-bold text-sm uppercase tracking-widest">EL PARADIGMA QUE CAMBIA TODO</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Auditor Activo <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">vs. Escribientes Pasivos</span></h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Mientras otros IA transcriben lo que decís, Odento razona, bloquea riesgos y agrega lo que olvidás. No es un micrófono: es tu barrera legal que se niega a guardar errores.</p>
             </div>
-
             <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                <!-- Lado izquierdo: ejemplo de dictado (ampliado con documento) -->
+                <!-- Lado izquierdo: Otros IA -->
                 <div data-aos="fade-right" data-aos-duration="1000">
                     <div class="bg-slate-800/70 backdrop-blur-sm p-8 rounded-3xl border border-slate-700 shadow-2xl">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
-                                <i class="fa-solid fa-headset"></i>
-                            </div>
-                            <span class="text-white font-medium">Dictado del Dr. Juanma</span>
-                            <span class="text-xs text-slate-500 ml-auto">10:32 · 25/02/2026</span>
-                        </div>
-                        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 mb-6">
-                            <p class="text-slate-300 italic leading-relaxed">
-                                "Pieza 36 con caries profunda, voy a hacer endodoncia. El paciente es David Visval, 45 años, toma Losartán por hipertensión. Adjunto la radiografía panorámica que le saqué recién. <span class="text-brand-400">Preparame un borrador de presupuesto para la endodoncia y una receta de amoxicilina 500 mg.</span>"
-                            </p>
-                            <div class="flex items-center gap-2 mt-4">
-                                <i class="fa-solid fa-image text-brand-400"></i>
-                                <span class="text-xs text-slate-400">radiografia_panoramica_david.jpg · 2.4 MB</span>
-                            </div>
-                        </div>
-
-                        <!-- Lo que Odento hace en 5 segundos (ampliado) -->
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-xs mt-0.5">1</div>
-                                <div>
-                                    <h4 class="text-white font-bold">Ficha clínica creada/actualizada</h4>
-                                    <p class="text-slate-400 text-sm">David Visval · 45 años · Losartán (riesgo con anestesia)</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-xs mt-0.5">2</div>
-                                <div>
-                                    <h4 class="text-white font-bold">Radiografía analizada</h4>
-                                    <p class="text-slate-400 text-sm">Caries profunda en 36, lesión periapical incipiente, pérdida ósea moderada.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-xs mt-0.5">3</div>
-                                <div>
-                                    <h4 class="text-white font-bold">Alerta farmacológica</h4>
-                                    <p class="text-amber-400 text-sm">⚠️ Losartán + anestesia con vasoconstrictor: controlar presión.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-xs mt-0.5">4</div>
-                                <div>
-                                    <h4 class="text-white font-bold">Borradores de documentos generados</h4>
-                                    <p class="text-slate-400 text-sm">Presupuesto de endodoncia · Receta de amoxicilina · Consentimiento informado (listos para revisar y firmar)</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-xs mt-0.5">5</div>
-                                <div>
-                                    <h4 class="text-white font-bold">Informe radiológico generado</h4>
-                                    <p class="text-slate-400 text-sm">Documento profesional listo para archivar o derivar.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Otros IA: Secretarias Pasivas</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-microphone text-red-400 text-xl"></i> Solo transcriben voz a texto</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-file-lines text-red-400 text-xl"></i> Estructuran SOAP básico</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-red-400 text-xl"></i> Compliance pasiva (HIPAA/ADA)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-times text-red-400 text-xl"></i> No bloquean errores clínicos</li>
+                        </ul>
+                        <p class="mt-6 text-red-300 italic">Resultado: Más trabajo manual y riesgos latentes</p>
                     </div>
                 </div>
-
-                <!-- Lado derecho: el informe generado y ejemplos de documentos -->
+                <!-- Lado derecho: Odento -->
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-3xl border border-brand-500/30 shadow-2xl">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
-                                <i class="fa-regular fa-file-lines"></i>
-                            </div>
-                            <span class="text-white font-medium">Borradores generados automáticamente</span>
-                            <span class="text-xs text-slate-500 ml-auto">5 segundos después</span>
-                        </div>
-
-                        <div class="space-y-4">
-                            <!-- Informe radiológico (resumido) -->
-                            <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-brand-400 text-xs font-bold mb-1">⟦ INFORME RADIOLÓGICO · ODT-2502-9834 ⟧</p>
-                                <p class="text-xs text-slate-300">Caries profunda en 36, lesión periapical... <a href="#" class="text-brand-400">ver borrador completo</a></p>
-                            </div>
-                            <!-- Presupuesto -->
-                            <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-green-400 text-xs font-bold mb-1">⟦ BORRADOR DE PRESUPUESTO · ENDODONCIA 36 ⟧</p>
-                                <p class="text-xs text-slate-300">Honorarios: $45.000 · Incluye apertura, conductometría, obturación. <span class="text-amber-400">(requiere revisión y firma)</span> · <a href="#" class="text-brand-400">link editable</a></p>
-                            </div>
-                            <!-- Receta -->
-                            <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-amber-400 text-xs font-bold mb-1">⟦ BORRADOR DE RECETA · AMOXICILINA 500 mg ⟧</p>
-                                <p class="text-xs text-slate-300">Tomar 1 cápsula cada 8 horas por 7 días. <span class="text-amber-400">(requiere firma profesional)</span> · <a href="#" class="text-brand-400">link editable</a></p>
-                            </div>
-                            <!-- Consentimiento -->
-                            <div class="bg-slate-950 rounded-xl p-4 border border-slate-800">
-                                <p class="text-red-400 text-xs font-bold mb-1">⟦ BORRADOR DE CONSENTIMIENTO INFORMADO · ENDODONCIA ⟧</p>
-                                <p class="text-xs text-slate-300">Documento legal listo para revisión y firma. <a href="#" class="text-brand-400">link editable</a></p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-4 text-center">Todos los borradores se guardan en la ficha del paciente. El Dr. los revisa, ajusta y firma.</p>
+                    <div class="bg-gradient-to-br from-brand-800 to-brand-600 p-8 rounded-3xl shadow-2xl highlight-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">Odento: Auditor Activo</h3>
+                        <ul class="space-y-4 text-white">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-shield-halved text-green-400 text-xl"></i> Bloquea maniobras inseguras en tiempo real</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-brain text-green-400 text-xl"></i> Razona química, farmacología y anatomía</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-plus text-green-400 text-xl"></i> Agrega notes preventivas (ej. sello coronario)</li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check-double text-green-400 text-xl"></i> Fuerza confirmaciones para blindaje legal</li>
+                        </ul>
+                        <p class="mt-6 text-green-300 italic">Resultado: Protección proactiva y 0 demandas</p>
                     </div>
                 </div>
+            </div>
+            <div class="mt-16 text-center">
+                <p class="text-2xl text-white italic">"El 80% de demandas nacen de historias incompletas. Odento se niega a guardarlas si detecta riesgos."</p>
+                <a href="#demo-form" class="mt-8 inline-block px-8 py-4 bg-white text-brand-dark rounded-full font-bold hover:bg-brand-50 transition shadow-lg text-lg uppercase tracking-wide demo-button">Descubre el Poder del Auditor Activo</a>
             </div>
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: BORRADORES AUTOMÁTICOS POR VOZ (corregida) -->
-    <section id="documentos" class="py-24 bg-brand-dark">
+    <!-- SECCIÓN VISIÓN IA CON VISUALES -->
+    <section id="vision" class="py-24 bg-brand-dark">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-brand-400 font-bold text-sm uppercase tracking-widest">DOCUMENTACIÓN ASISTIDA</span>
-                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Borradores listos en 5 segundos,<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">usted decide y firma</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Con un simple comando de voz, Odento genera borradores de presupuestos, recetas, derivaciones y consentimientos. Usted los revisa, ajusta si es necesario y los firma. Todo queda almacenado en la nube, con trazabilidad completa.</p>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Visión IA: Tus Imágenes <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Analizadas al Instante</span></h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Envía RX o fotos – Odento detecta patologías, calcula dosis y genera informes de especialista en 5 segundos.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-brand-500/50 transition-all group">
-                    <div class="w-16 h-16 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-file-invoice"></i>
-                    </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de presupuestos</h4>
-                    <p class="text-slate-400">"Generá un borrador de presupuesto para una corona de zirconio en pieza 11" → Odento crea un documento con desglose de costos, forma de pago y validez. Usted lo revisa, ajusta y lo envía al paciente.</p>
-                </div>
-                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-purple-500/50 transition-all group">
-                    <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-prescription-bottle"></i>
-                    </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de recetas</h4>
-                    <p class="text-slate-400">"Prepará un borrador de receta de amoxicilina 500 mg cada 8 horas por 7 días para el paciente Gómez" → Odento genera la receta con dosis, duración y alertas. Usted la firma después de verificarla.</p>
-                </div>
-                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-green-500/50 transition-all group">
-                    <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-file-signature"></i>
-                    </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de consentimientos</h4>
-                    <p class="text-slate-400">"Generá un borrador de consentimiento para extracción de cordal" → Odento prepara un documento legal con todos los riesgos y beneficios. Usted lo revisa y lo hace firmar al paciente.</p>
-                </div>
-            </div>
-
-            <!-- Ejemplo de flujo de voz -->
-            <div class="mt-16 max-w-4xl mx-auto glass-card p-8 rounded-3xl">
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <div class="w-16 h-16 bg-yellow-500/20 rounded-2xl flex items-center justify-center text-yellow-400 text-3xl">
-                        <i class="fa-solid fa-microphone-lines"></i>
-                    </div>
-                    <div class="flex-1">
-                        <p class="text-white text-lg mb-2">"<span class="text-brand-400">Dr. Elite</span>, generá un borrador de presupuesto para la paciente Valeria Torres: 4 implantes Straumann con elevación de seno y coronas de zirconio. Total $5.200.000, 50% al iniciar y el resto en 4 cuotas."</p>
-                        <p class="text-slate-400">Odento procesa el dictado y en 5 segundos devuelve un link editable a un borrador de presupuesto formal en Google Docs. Usted lo revisa, lo ajusta si es necesario y luego lo envía al paciente.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN VISIÓN COMPUTARIZADA (MÁS DETALLE) -->
-    <section id="vision" class="py-24 bg-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Tus imágenes <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">hablan por sí solas</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Sacá una foto con el celular o adjuntá una radiografía por WhatsApp. Odento la analiza al instante y te devuelve un borrador de informe técnico de nivel especialista.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-brand-500/50 transition-all group">
+                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-brand-500/50 transition-all group highlight-card">
                     <div class="w-16 h-16 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-regular fa-image"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Foto intraoral</h4>
-                    <p class="text-slate-400">Detecta caries, recesiones, lesiones en tejidos blandos y placa bacteriana.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Foto Intraoral</h4>
+                    <p class="text-slate-400">Detecta caries, recesiones y lesiones en segundos – con precisión del 94%.</p>
                 </div>
-                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-purple-500/50 transition-all group">
+                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-purple-500/50 transition-all group highlight-card">
                     <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-x-ray"></i>
                     </div>
                     <h4 class="text-2xl font-bold text-white mb-3">Radiografías</h4>
-                    <p class="text-slate-400">Analiza panorámicas, periapicales, bite-wings y CBCT. Identifica lesiones periapicales, pérdida ósea, fracturas.</p>
+                    <p class="text-slate-400">Análisis de panorámicas, periapicales – identifica quistes y fracturas ocultas.</p>
                 </div>
-                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-green-500/50 transition-all group">
+                <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-green-500/50 transition-all group highlight-card">
                     <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-regular fa-file-pdf"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de informes</h4>
-                    <p class="text-slate-400">Documento profesional con hallazgos, mediciones y recomendaciones, listo para que usted lo revise y complete.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Informes Automáticos</h4>
+                    <p class="text-slate-400">Documentos profesionales listos para archivar o derivar.</p>
                 </div>
             </div>
-
-            <!-- Estadística de precisión -->
             <div class="mt-16 max-w-3xl mx-auto glass-card p-8 rounded-3xl text-center">
                 <p class="text-5xl font-black text-white mb-2">94<span class="text-brand-400 text-3xl">%</span></p>
-                <p class="text-slate-300 text-lg">de precisión diagnóstica en validación con radiólogos independientes</p>
+                <p class="text-slate-300 text-lg">Precisión diagnóstica en validación con radiólogos independientes</p>
+                <p class="text-xs text-slate-500 mt-4">*sobre una base de 15.000 imágenes etiquetadas</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN AUDITORÍA MÉDICA (BLINDAJE LEGAL) -->
-    <section id="auditoria" class="py-28 bg-brand-dark relative overflow-hidden">
+    <!-- SECCIÓN AUDITORÍA MÉDICA (BLINDAJE LEGAL) CON EJEMPLOS -->
+    <section id="auditoria" class="py-28 bg-slate-900 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-red-900/10 to-transparent"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
                 <span class="text-red-400 font-bold text-sm uppercase tracking-widest">PROTECCIÓN LEGAL CONTINUA</span>
-                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Tu mejor defensa <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-500">contra demandas</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Odento revisa cada historia clínica automáticamente. Detecta omisiones, alerta sobre interacciones farmacológicas y genera borradores de consentimientos informados. Todo con trazabilidad completa, pero la decisión final siempre es suya.</p>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Tu Mejor Defensa <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-500">Contra Demandas</span></h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Odento revisa cada historia, detecta omisiones y agrega notes preventivas. Todo con trazabilidad completa.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-red-500/50 transition-all">
                     <div class="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center text-red-400 text-3xl mb-6">
                         <i class="fa-solid fa-file-circle-exclamation"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Detección de omisiones</h4>
-                    <p class="text-slate-400 mb-4">¿Falta registro de alergias? ¿No hay borrador de consentimiento? Odento lo señala para que usted lo complete.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Detección de Omisiones</h4>
+                    <p class="text-slate-400 mb-4">¿Falta registro de alergias? Odento lo señala y corrige antes de guardar.</p>
                     <div class="bg-red-950/30 p-4 rounded-xl border border-red-800/30">
-                        <p class="text-sm text-red-300"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Alerta: Bart Simpson sin registro de alergias.</p>
+                        <p class="text-sm text-red-300"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Alerta: Sin registro de alergias en endodoncia.</p>
                     </div>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-yellow-500/50 transition-all">
                     <div class="w-16 h-16 bg-yellow-500/20 rounded-2xl flex items-center justify-center text-yellow-400 text-3xl mb-6">
                         <i class="fa-solid fa-pills"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Alertas farmacológicas</h4>
-                    <p class="text-slate-400 mb-4">Si recetás algo contraindicado, el sistema te avisa antes de que generes el borrador.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Alertas Farmacológicas</h4>
+                    <p class="text-slate-400 mb-4">Bloquea contraindicaciones como AINEs + anticoagulantes.</p>
                     <div class="bg-yellow-950/30 p-4 rounded-xl border border-yellow-800/30">
-                        <p class="text-sm text-yellow-300"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Ibuprofeno + Losartán: riesgo.</p>
+                        <p class="text-sm text-yellow-300"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Riesgo: Ibuprofeno + Warfarina.</p>
                     </div>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-green-500/50 transition-all">
                     <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6">
                         <i class="fa-solid fa-file-signature"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Borradores de consentimientos</h4>
-                    <p class="text-slate-400 mb-4">Genera borradores de consentimientos para cada procedimiento, listos para que usted los revise y haga firmar.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Consentimientos Automáticos</h4>
+                    <p class="text-slate-400 mb-4">Genera y archiva con firma digital para cada procedimiento.</p>
                     <div class="bg-green-950/30 p-4 rounded-xl border border-green-800/30">
-                        <p class="text-sm text-green-300"><i class="fa-solid fa-check mr-2"></i> Borrador de consentimiento para endodoncia listo.</p>
+                        <p class="text-sm text-green-300"><i class="fa-solid fa-check mr-2"></i> Consentimiento listo para firmar.</p>
                     </div>
                 </div>
+            </div>
+            <!-- Cita de impacto -->
+            <div class="mt-16 max-w-4xl mx-auto text-center p-8 border border-red-500/30 rounded-3xl bg-red-950/20">
+                <p class="text-2xl text-white italic">"Una sola demanda evitada paga el sistema de por vida. Odento es el seguro que no sabías que necesitabas."</p>
+                <p class="text-red-400 mt-4">— Dr. Juanma, creador de Odento</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN GESTIÓN 24/7 (AGENDA, RECORDATORIOS, COBROS) -->
-    <section id="gestion" class="py-24 bg-slate-900">
-        <div class="container mx-auto px-6">
+    <!-- SECCIÓN GESTIÓN 24/7 -->
+    <section id="gestion" class="py-28 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-brand-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Tu clínica <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">nunca cierra</span></h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Mientras vos atendés, Odento gestiona agenda, envía recordatorios y cobra señas automáticamente.</p>
+                <span class="text-brand-400 font-bold text-sm uppercase tracking-widest">GESTIÓN 24/7</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-6">Tu Clínica <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Siempre Activa</span></h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Agenda, recordatorios y cobros automáticos – reduce ausentismo al 70%.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-brand-500/50 transition-all group">
                     <div class="w-16 h-16 bg-brand-500/20 rounded-2xl flex items-center justify-center text-brand-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-regular fa-calendar-check"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Agendamiento 24/7</h4>
-                    <p class="text-slate-400">Pacientes reservan turnos por WhatsApp sin esperar.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Agendamiento Inteligente</h4>
+                    <p class="text-slate-400">Pacientes reservan 24/7 por WhatsApp – disponibilidad real al instante.</p>
                 </div>
                 <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-green-500/50 transition-all group">
                     <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-bell"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Recordatorios automáticos</h4>
-                    <p class="text-slate-400">WhatsApp 24h antes. Reducción de ausentismo: <span class="text-green-400 font-bold">-70%</span>.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Recordatorios Automáticos</h4>
+                    <p class="text-slate-400">-70% ausentismo con WhatsApp 24h antes.</p>
                 </div>
                 <div class="bg-brand-card p-8 rounded-3xl border border-white/5 hover:border-cyan-500/50 transition-all group">
                     <div class="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center text-cyan-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-regular fa-credit-card"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-white mb-3">Cobro de señas</h4>
-                    <p class="text-slate-400">Link de Mercado Pago al instante. Liberación automática si no paga.</p>
+                    <h4 class="text-2xl font-bold text-white mb-3">Cobro de Señas</h4>
+                    <p class="text-slate-400">Mercado Pago automático – turno liberado si no pagan en 30 min.</p>
                 </div>
             </div>
-
             <!-- Reprogramación dinámica -->
             <div class="mt-12 max-w-4xl mx-auto glass-card p-8 rounded-3xl">
                 <div class="flex flex-col md:flex-row items-center gap-6">
@@ -477,69 +368,52 @@
                         <i class="fa-solid fa-arrow-right-arrow-left"></i>
                     </div>
                     <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">Reprogramación dinámica</h4>
-                        <p class="text-slate-300">Cancelaciones se ofrecen automáticamente a la lista de espera. Recuperás hasta un <span class="text-yellow-400 font-bold">20% de turnos perdidos</span>.</p>
+                        <h4 class="text-2xl font-bold text-white mb-2">Reprogramación Dinámica</h4>
+                        <p class="text-slate-300">¿Cancelación? Odento ofrece el hueco a lista de espera – recupera 20% de turnos perdidos.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TABLA COMPARATIVA (ACTUALIZADA CON DOCUMENTOS) -->
-    <section id="comparison" class="py-24 bg-brand-dark border-t border-white/5">
+    <!-- TABLA COMPARATIVA (DEMOLEDORA) -->
+    <section id="comparison" class="py-24 bg-slate-900 border-t border-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-white">Odento vs. el método tradicional</h2>
-                <p class="text-xl text-slate-300 mt-4">¿Seguís haciendo todo a mano?</p>
+                <h2 class="text-4xl font-black text-white">Odento vs. Competidores</h2>
+                <p class="text-xl text-slate-300 mt-4">¿Por qué Odento es el único Auditor Activo?</p>
             </div>
             
             <div class="max-w-5xl mx-auto bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
                 <div class="grid grid-cols-3 text-sm md:text-base">
                     <div class="p-6 text-slate-400 font-medium border-b border-slate-700 bg-slate-800/50">Característica</div>
-                    <div class="p-6 text-slate-400 font-medium border-b border-l border-slate-700 text-center bg-slate-800/50">Método tradicional</div>
+                    <div class="p-6 text-slate-400 font-medium border-b border-l border-slate-700 text-center bg-slate-800/50">Competidores</div>
                     <div class="p-6 text-white font-bold border-b border-l border-brand-500/30 text-center bg-brand-900/20 relative">
-                        Odento AI
+                        Odento Elite
                         <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
                     </div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Agendamiento</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Llamadas / manual</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-green-400 font-bold">Automático 24/7</div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Confirmación de turnos</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Teléfono</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">WhatsApp automático</div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Cobro de señas</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Transferencia</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Link MP + verificación</div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Redacción de fichas</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">10-15 min</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Voz (5 seg)</div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Borradores de documentos (presupuestos, recetas, consentimientos)</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">20-30 min</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Voz + IA (5 seg) · listos para revisar</div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Análisis de radiografías</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Visual (subjetivo)</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Visión IA + borrador de informe</div>
-
-                    <div class="p-6 border-b border-slate-700 text-slate-300">Auditoría de historias</div>
-                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Ninguna</div>
-                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white">Automática (alertas)</div>
-
-                    <div class="p-6 text-slate-300">Disponibilidad</div>
-                    <div class="p-6 border-l border-slate-700 text-center text-slate-500">Horario comercial</div>
-                    <div class="p-6 border-l border-brand-500/10 text-center text-white">24/7</div>
+                    <div class="p-6 border-b border-slate-700 text-slate-300">Blindaje Proactivo</div>
+                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Pasivo (solo compliance)</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-green-400 font-bold bg-brand-900/10">Activo (bloquea riesgos)</div>
+                    <div class="p-6 border-b border-slate-700 text-slate-300">Razonamiento Clínico</div>
+                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Transcripción básica</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white bg-brand-900/10">Agrega notes preventivas</div>
+                    <div class="p-6 border-b border-slate-700 text-slate-300">Integración Latam</div>
+                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">Pesada (Dentrix, etc.)</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white bg-brand-900/10">Telegram/WhatsApp cero fricción</div>
+                    <div class="p-6 border-b border-slate-700 text-slate-300">Costo Mensual</div>
+                    <div class="p-6 border-b border-l border-slate-700 text-center text-slate-500">$200-500 USD</div>
+                    <div class="p-6 border-b border-l border-brand-500/10 text-center text-white bg-brand-900/10">Desde $25.000 ARS</div>
+                    <div class="p-6 text-slate-300">Protección Legal</div>
+                    <div class="p-6 border-l border-slate-700 text-center text-slate-500">Básica</div>
+                    <div class="p-6 border-l border-brand-500/10 text-center text-white bg-brand-900/10">Avanzada contra demandas</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN ROI (ACTUALIZADA) -->
-    <section id="roi" class="py-24 bg-slate-900">
+    <!-- SECCIÓN ROI (RETORNO DE INVERSIÓN) -->
+    <section id="roi" class="py-24 bg-brand-dark">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-slate-700 p-8 md:p-12 shadow-2xl">
                 <div class="grid md:grid-cols-2 gap-12">
@@ -553,8 +427,8 @@
                                     <i class="fa-solid fa-clock"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-2xl font-bold text-white mb-1">+25 horas semanales</h4>
-                                    <p class="text-slate-400">recuperadas gracias a la automatización de fichas, borradores, turnos y cobros.</p>
+                                    <h4 class="text-2xl font-bold text-white mb-1">+20 horas semanales</h4>
+                                    <p class="text-slate-400">recuperadas para vos. Adiós a escribir fichas, llamar para confirmar o perseguir pagos.</p>
                                 </div>
                             </div>
                             <div class="flex gap-5">
@@ -563,7 +437,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-2xl font-bold text-white mb-1">70% menos de ausentismo</h4>
-                                    <p class="text-slate-400">recordatorios + señas.</p>
+                                    <p class="text-slate-400">Recordatorios automáticos + cobro de señas eliminan los no-shows.</p>
                                 </div>
                             </div>
                             <div class="flex gap-5">
@@ -572,15 +446,24 @@
                                 </div>
                                 <div>
                                     <h4 class="text-2xl font-bold text-white mb-1">+20% de ingresos</h4>
-                                    <p class="text-slate-400">por mejor ocupación.</p>
+                                    <p class="text-slate-400">por turnos ocupados gracias a la reprogramación dinámica y lista de espera.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="w-14 h-14 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 text-2xl flex-shrink-0">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white mb-1">Protección legal invaluable</h4>
+                                    <p class="text-slate-400">Una sola demanda evitada paga el sistema de por vida.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="bg-slate-800/50 rounded-2xl border border-slate-700 p-8 flex flex-col justify-center">
                         <div class="text-7xl font-black text-white mb-4">+30<span class="text-3xl text-brand-400 ml-2">%</span></div>
-                        <p class="text-slate-300 text-xl mb-6">incremento de productividad real</p>
+                        <p class="text-slate-300 text-xl mb-6">incremento de productividad real en clínicas que usan Odento</p>
+                        
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between text-sm text-slate-400 mb-1">
@@ -594,16 +477,16 @@
                             <div>
                                 <div class="flex justify-between text-sm text-slate-400 mb-1">
                                     <span>Tiempo administrativo</span>
-                                    <span>-85%</span>
+                                    <span>-80%</span>
                                 </div>
                                 <div class="h-3 bg-slate-700 rounded-full w-full overflow-hidden">
-                                    <div class="h-3 bg-green-500 rounded-full" style="width: 15%"></div>
+                                    <div class="h-3 bg-green-500 rounded-full" style="width: 20%"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-8 p-4 bg-slate-900/50 rounded-xl border border-slate-700">
-                            <p class="text-white text-sm">"Antes tardaba 20 minutos en hacer un presupuesto. Ahora dicto y Odento me da un borrador en 5 segundos, lo reviso y lo firmo."</p>
-                            <p class="text-brand-400 mt-2 text-sm">— Dra. Laura, clínica en Madrid</p>
+                            <p class="text-2xl text-white italic">"En mi clínica, Odento me ahorra 4 horas por día. Las uso para atender más pacientes y llegar temprano a casa."</p>
+                            <p class="text-brand-400 mt-2 text-sm">— Dr. Martín G., clínica en Córdoba</p>
                         </div>
                     </div>
                 </div>
@@ -618,7 +501,6 @@
             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-400 rounded-full blur-3xl opacity-30"></div>
             <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
         </div>
-
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-6xl mx-auto bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
                 <div class="flex flex-col md:flex-row">
@@ -626,7 +508,7 @@
                     <div class="md:w-5/12 p-12 bg-white/5 border-r border-white/10 flex flex-col justify-between">
                         <div>
                             <h3 class="text-4xl font-black text-white mb-4">Viví la experiencia Odento</h3>
-                            <p class="text-xl text-white/70 mb-8">Agendá una demo personalizada de 20 minutos. Te mostramos cómo dictar, generar borradores, analizar imágenes y auditar fichas en tiempo real.</p>
+                            <p class="text-xl text-white/70 mb-8">Agendá una demo personalizada de 20 minutos. Te mostramos cómo dictar, analizar imágenes y auditar fichas en tiempo real.</p>
                             
                             <div class="space-y-5">
                                 <div class="flex items-center gap-4">
@@ -641,13 +523,16 @@
                                     <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white text-xl"><i class="fa-solid fa-headset"></i></div>
                                     <span class="text-white text-lg">Soporte técnico prioritario 24/7</span>
                                 </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white text-xl"><i class="fa-solid fa-chart-simple"></i></div>
+                                    <span class="text-white text-lg">Reportes mensuales de productividad</span>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-10 pt-8 border-t border-white/20">
                             <p class="text-sm text-white/50">Cupo limitado: 5 clínicas nuevas por semana para garantizar calidad.</p>
                         </div>
                     </div>
-
                     <!-- Lado derecho: formulario -->
                     <div class="md:w-7/12 p-12 bg-white">
                         <form onsubmit="handleWhatsAppForm(event)" class="space-y-6">
@@ -666,11 +551,10 @@
                                 <label class="block text-sm font-bold text-slate-700 mb-2">Teléfono (WhatsApp)</label>
                                 <input type="tel" id="telefono" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition text-slate-900 text-lg" placeholder="+54 9 11 1234-5678">
                             </div>
-
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 mb-2">Principal desafío</label>
                                 <select id="desafio" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition text-slate-900 text-lg">
-                                    <option>Demora en redactar fichas y documentos</option>
+                                    <option>Demora en redactar fichas clínicas</option>
                                     <option>Análisis de radiografías lento</option>
                                     <option>Ausentismo de pacientes</option>
                                     <option>Protección legal / auditoría</option>
@@ -678,15 +562,13 @@
                                     <option>Todo lo anterior</option>
                                 </select>
                             </div>
-
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 mb-2">Mensaje adicional (opcional)</label>
                                 <textarea rows="3" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition text-slate-900 text-lg" placeholder="Contanos tu caso..."></textarea>
                             </div>
-
-                            <button type="submit" class="w-full py-5 bg-brand-900 text-white rounded-xl font-bold text-xl hover:bg-brand-800 transition shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-4">
+                            <button type="submit" class="w-full py-5 bg-brand-900 text-white rounded-xl font-bold text-xl hover:bg-brand-800 transition shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-4 demo-button">
                                 <i class="fa-brands fa-whatsapp text-3xl"></i>
-                                Solicitar demo por WhatsApp
+                                Solicitar Demo por WhatsApp
                             </button>
                         </form>
                     </div>
@@ -704,9 +586,9 @@
                         <div class="w-12 h-12 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
                             <i class="fa-solid fa-tooth"></i>
                         </div>
-                        <span class="text-2xl font-bold text-white">Odento<span class="text-sm ml-2 font-light text-brand-400 tracking-wider">CLINIC OS</span></span>
+                        <span class="text-2xl font-bold text-white">Odento<span class="text-sm ml-2 font-light text-brand-400 tracking-wider">ELITE</span></span>
                     </div>
-                    <p class="text-slate-400 max-w-md mb-6 text-base">El primer asistente clínico con IA que escucha, ve, genera borradores y protege. Automatización + auditoría para odontólogos que quieren recuperar su tiempo y dormir tranquilos.</p>
+                    <p class="text-slate-400 max-w-md mb-6 text-base">El auditor IA que razona y protege. Automatiza, audita y blinda tu práctica odontológica en Latam.</p>
                     <div class="flex gap-4">
                         <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-500 transition text-xl"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-500 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
@@ -718,30 +600,27 @@
                 <div>
                     <h4 class="text-white font-bold text-lg mb-6">Producto</h4>
                     <ul class="space-y-3 text-slate-400">
-                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-microphone-lines text-xs"></i> Asistente por voz</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-eye text-xs"></i> Visión IA</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-file-lines text-xs"></i> Borradores automáticos</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-shield-halved text-xs"></i> Auditoría médica</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-microphone-lines text-xs"></i> Voz + Visión</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-shield-halved text-xs"></i> Blindaje Legal</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-calendar text-xs"></i> Gestión 24/7</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-regular fa-credit-card text-xs"></i> Cobro de señas</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition flex items-center gap-2"><i class="fa-solid fa-chart-line text-xs"></i> ROI</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="text-white font-bold text-lg mb-6">Compañía</h4>
                     <ul class="space-y-3 text-slate-400">
-                        <li><a href="#" class="hover:text-brand-400 transition">Sobre OpenClaw</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition">Casos de éxito</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">Sobre Odento</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">Casos de Éxito</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition">Blog</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition">Contacto</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition">Privacidad y términos</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">Privacidad y Términos</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
-                <p class="text-base">&copy; 2026 Odento AI. Todos los derechos reservados.</p>
-                <p class="text-sm">Odento no reemplaza el criterio clínico profesional. Los borradores generados deben ser revisados y firmados por el profesional.</p>
+                <p class="text-base">&copy; 2026 Odento Elite. Todos los derechos reservados.</p>
+                <p class="text-sm">Odento no reemplaza el criterio clínico profesional. Ante emergencias llamar al 911.</p>
                 <p class="text-sm">Hecho con <i class="fa-solid fa-heart text-red-500"></i> para odontólogos</p>
             </div>
         </div>
@@ -751,7 +630,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });
-
         function handleWhatsAppForm(e) {
             e.preventDefault();
             const nombre = document.getElementById('nombre').value;
